@@ -14,3 +14,14 @@ public:
         return ans;
     }
 };
+//Approach2
+class Solution {
+public:
+    int maximizeSum(vector<int>& nums, int k) {
+        int maxi=*max_element(nums.begin(),nums.end());
+        int ans=k*maxi;
+        int more=(k*(k-1))/2;
+        ans+=more;
+        return ans;
+    }
+};
