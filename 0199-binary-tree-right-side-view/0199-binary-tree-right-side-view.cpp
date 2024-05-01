@@ -11,27 +11,28 @@
  */
 class Solution {
 public:
-    void solve(auto root,auto& mp,auto &ans,int level)
-    {
-        if(root==NULL){
-            return;
-        }
-        mp[level]=root->val;
-        solve(root->left,mp,ans,level+1);
-        solve(root->right,mp,ans,level+1);
-
+    void solve(TreeNode*root,int index,vector<int>&ans){
+    if(root==NULL){
+        return;
+    }
+    if(index==ans.size()){
+        ans.push_back(root->val);
+        
+    }
+    solve(root->right,index+1,ans);
+    solve(root->left,index+1,ans);
     }
     vector<int> rightSideView(TreeNode* root) {
-        map<int,int>mp;
-        vector<int> ans;
-        if(root==NULL){
-            return ans;
-        }
-        int level=0;
-        solve(root,mp,ans,level);
-        for(auto i:mp){
-            ans.push_back(i.second);
-        }
-        return ans;
+         int index=0;
+   vector<int>ans;
+   solve(root,index,ans);
+   return ans;
     }
 };
+
+    
+    
+    
+
+    //Function to return list containing elements of right view of binary tree.
+    
