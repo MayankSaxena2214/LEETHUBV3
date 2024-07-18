@@ -1,41 +1,29 @@
 class Solution {
 public:
-    bool check(vector<int>&count1,vector<int>&count2){
+    bool checkEqual(vector<int>&v1,vector<int>&v2){
         for(int i=0;i<26;i++){
-            if(count1[i]!=count2[i]){
-                return false;
-            }
+            if(v1[i]!=v2[i])return false;
         }
         return true;
     }
     bool checkInclusion(string s1, string s2) {
-        vector<int>count1(26,0);
-        for(auto ch:s1){
-            count1[ch-'a']++;
+        vector<int>v1(26,0);
+        vector<int>v2(26,0);
+        int k=s1.length();
+        if(s2.length()<s1.length())return false;
+        for(int i=0;i<s1.length();i++){
+            v1[s1[i]-'a']++;
+            v2[s2[i]-'a']++;
         }
-        vector<int>count2(26,0);
-        int window=s1.length();
-        int i=0;
-        while(i<window && i<s2.length()){
-            count2[s2[i]-'a']++;
-            i++;
-        }
-        
-        if(check(count1,count2)){
-            return true;
-        }
-        while(i<s2.length()){
-            //remove the old character
-            char old=s2[i-window];
-            count2[old-'a']--;
-            char naya=s2[i];
-            count2[naya-'a']++;
-            if(check(count1,count2)){
-                return true;
-            }
-            i++;
+        if(checkEqual(v1,v2))return true;
+        for(int i=k;i<s2.length();i++){
+            int old=i-s1.length();
+            v2[s2[old]-'a']--;
+            //new 
+            v2[s2[i]-'a']++;
+            if(checkEqual(v1,v2))return true;
+
         }
         return false;
-
     }
 };
