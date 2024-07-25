@@ -1,12 +1,12 @@
 class MinStack {
 public:
-    stack<int>st;
-    int mini;
+    stack<long long>st;
+    long long mini;
     MinStack() {
         mini=INT_MAX;
     }
     
-    void push(int val) {
+    void push(long long val) {
         if(st.empty()){
             st.push(val);
             mini=val;
@@ -24,10 +24,10 @@ public:
     
     void pop() {
         if(st.empty())return;
-        int val=st.top();
+        long long val=st.top();
         st.pop();
         if(val<mini){
-            int prevmini=2*mini-val;
+            long long prevmini=2*mini-val;
             mini=prevmini;
             
         }
