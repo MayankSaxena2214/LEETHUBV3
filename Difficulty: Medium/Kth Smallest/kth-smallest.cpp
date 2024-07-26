@@ -20,7 +20,7 @@ class Solution{
             pq.push(arr[i]);
         }
         for(int i=l+k;i<=r;i++){
-            if(arr[i]<pq.top()){
+            if(pq.top()>arr[i]){
                 pq.pop();
                 pq.push(arr[i]);
             }
