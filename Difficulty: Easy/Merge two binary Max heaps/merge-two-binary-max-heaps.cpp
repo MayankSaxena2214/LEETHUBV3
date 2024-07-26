@@ -12,15 +12,19 @@ using namespace std;
 
 class Solution{
     public:
-    void heapify(vector<int>&arr,int i,int n){
+    void heapify(vector<int>&arr,int n,int i){
         int largest=i;
         int l=2*i+1;
         int r=2*i+2;
-        if(l<n && arr[largest]<arr[l])largest=l;
-        if(r<n && arr[largest]<arr[r])largest=r;
+        if(l<n && arr[largest]<arr[l]){
+            largest=l;
+        }
+        if(r<n &&  arr[largest]<arr[r]){
+            largest=r;
+        }
         if(largest!=i){
             swap(arr[largest],arr[i]);
-            heapify(arr,largest,n);
+            heapify(arr,n,largest);
         }
     }
     vector<int> mergeHeaps(vector<int> &a, vector<int> &b, int n, int m) {
@@ -28,9 +32,8 @@ class Solution{
         vector<int>ans;
         for(auto val:a)ans.push_back(val);
         for(auto val:b)ans.push_back(val);
-        int size=ans.size();
-        for(int i=n-1;i>=0;i--){
-            heapify(ans,i,size);
+        for(int i=(n+m)/2-1;i>=0;i--){
+            heapify(ans,n+m,i);
         }
         return ans;
     }
