@@ -92,36 +92,41 @@ Node *buildTree(string str) {
 
 class Solution {
   public:
-  int totalNodes(struct Node*root){
-      if(root==NULL)return 0;
-      return totalNodes(root->left)+totalNodes(root->right)+1;
-  }
-  bool isMaxHeap(struct Node*root){
-      if(root==NULL)return true;
-      if(root->left==NULL && root->right==NULL)return true;
-      if(root->right==NULL){
-          return root->data>root->left->data;
-      }
-      bool left=isMaxHeap(root->left);
-      bool right=isMaxHeap(root->right);
-      bool option=root->data>root->left->data && root->data >root->right->data;
-      return left&&right&&option;
-  }
-  bool isCBT(struct Node*root,int index,int count){
-      if(root==NULL)return true;
-      if(index>=count){
-          return false;
-      }
-      bool left=isCBT(root->left,2*index+1,count);
-      bool right=isCBT(root->right,2*index+2,count);
-      return left&&right;
-  }
-    bool isHeap(struct Node* tree) {
-        // code here
-        if(isCBT(tree,0,totalNodes(tree)) && isMaxHeap(tree)){
-            return true;
+    bool isCbt(Node*root,int index,int total){
+        if(root==NULL)return true;
+        if(index>=total)return false;
+        
+        return isCbt(root->left,2*index+1,total) && isCbt(root->right,2*index+2,total);
+    }
+    int getTotal(Node*root){
+        if(root==NULL){
+            return 0;
+        }
+        return 1+getTotal(root->left)+getTotal(root->right);
+    }
+    bool isMax(Node*root){
+        if(root==NULL)return true;
+        if(root->left==NULL && root->right==NULL)return true;
+        if(root->right==NULL && root->left!=NULL){
+            return root->data>root->left->data;
+        }
+        else {
+            bool left=isMax(root->left);
+            bool right=isMax(root->right);
+            return left&& right&& (root->data>root->left->data && root->data> root->right->data);
         }
         return false;
+    }
+    bool isHeap(struct Node* tree) {
+        // code here
+        if(tree==NULL)return true;
+        int total=getTotal(tree);
+        if(isCbt(tree,0,total) && isMax(tree)){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 };
 
