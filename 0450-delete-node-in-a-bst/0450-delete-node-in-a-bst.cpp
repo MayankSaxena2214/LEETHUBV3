@@ -11,39 +11,38 @@
  */
 class Solution {
 public:
-TreeNode*mini(TreeNode*root){
-    TreeNode*temp=root;
-    TreeNode*ans=NULL;
-    while(temp!=NULL){
-        ans=temp;
-        temp=temp->left;
+    TreeNode* getMini(TreeNode*root){
+        if(root==NULL)return NULL;
+        TreeNode*temp=root;
+        while(temp->left!=NULL){
+            temp=temp->left;
+        }
+        return temp;
     }
-    return ans;
-}
     TreeNode* deleteNode(TreeNode* root, int key) {
         if(root==NULL)return NULL;
         if(root->val==key){
             if(root->left==NULL && root->right==NULL){
                 return NULL;
             }
-            else if(root->left==NULL){
+            else if(root->left==NULL && root->right!=NULL){
                 return root->right;
             }
-            else if(root-> right==NULL && root->left!=NULL){
+            else if(root->left!=NULL && root->right==NULL){
                 return root->left;
             }
             else{
-                int val=mini(root->right)->val;
-                root->val=val;
-                root->right=deleteNode(root->right,val);
+                int mini=getMini(root->right)->val;
+                root->val=mini;
+                root->right=deleteNode(root->right,mini);
                 return root;
             }
         }
-        else if(root->val > key){
+        else if(root->val>key){
             root->left=deleteNode(root->left,key);
             return root;
         }
-        else{
+        else {
             root->right=deleteNode(root->right,key);
             return root;
         }
