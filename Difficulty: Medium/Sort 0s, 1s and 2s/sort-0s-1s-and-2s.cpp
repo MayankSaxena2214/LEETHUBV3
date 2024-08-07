@@ -8,24 +8,28 @@ using namespace std;
 class Solution
 {
     public:
-    void sort012(int arr[], int n)
+    void sort012(int a[], int n)
     {
         // code here 
-        int low=0,mid=0,high=n-1;
+        int low=0;
+        int high=n-1;
+        int mid=0;
         while(mid<=high){
-            if(arr[mid]==0){
-                swap(arr[mid],arr[low]);
+            if(a[mid] == 0){
+                swap(a[low],a[mid]);
                 low++;
                 mid++;
             }
-            else if(arr[mid]==1)mid++;
-            else if(arr[mid]==2){
-                swap(arr[mid],arr[high]);
+            else if(a[mid] == 1){
+                mid++;
+            }
+            else{
+                swap(a[mid],a[high]);
                 high--;
             }
         }
+        
     }
-    
 };
 
 //{ Driver Code Starts.
