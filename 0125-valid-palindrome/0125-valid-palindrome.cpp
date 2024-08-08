@@ -1,63 +1,29 @@
 class Solution {
 public:
-string myfilter(string s){
-    string ans;
-    for(char ch:s){
-        if(ch>='a' && ch<='z'){
-            ans.push_back(ch);
+    bool isPalindrome(string s) {
+        for(int i=0;i<s.length();i++){
+        if(s[i]>='a' && s[i]<='z'){
+            continue;
         }
-        else if(ch>='A' &&  ch<='Z'){
-            ans.push_back(ch-'A'+'a');
+        else if(s[i]>='A' && s[i]<='Z'){
+            s[i]=tolower(s[i]);
         }
-        else if(ch>='0' && ch<='9'){
-            ans.push_back(ch);
+        else if(s[i]>='0' && s[i]<='9'){
+            continue;
+        }
+        else{
+            s.erase(i,1);
+            i--;
         }
     }
-    return ans;
-}
-    bool isPalindrome(string s) {
-         string filter=myfilter(s);
-    int st=0;
-    int e=filter.length()-1;
-    while(st<e){
-        if(filter[st]!=filter[e]){
+    // cout<<s<<endl;
+    int start=0,end=s.length()-1;
+    while(start<end){
+        if(s[start]!=s[end]){
             return false;
         }
-        st++;
-        e--;
+        start++,end--;
     }
     return true;
-        // string temp;
-
-        // for(int i=0;i<s.length();i++){
-        //     char ch=s[i];
-        //     if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z') || (ch>='0' && ch<='9')){
-        //         temp.push_back(ch);
-        //     }
-        // }
-        // if(temp.length()==0){
-        //     return true;
-        // }
-        // // To lower case
-        // for(int i=0;i<temp.length();i++){
-        //     char ch=temp[i];
-        //     if((ch>='a' && ch<='z')  || (ch>='0' && ch<='9')){
-        //         temp[i]=temp[i];
-        //     }
-        //     else{
-        //         temp[i]=ch-'A'+'a';
-        //     }
-        // }
-        // int start=0;
-        // int end=temp.length()-1;
-        // while(start<end){
-        //     if(temp[start]!=temp[end]){
-        //         return false;
-        //     }
-        //     start++;
-        //     end--;
-        // }
-        // return true;
-
     }
 };
