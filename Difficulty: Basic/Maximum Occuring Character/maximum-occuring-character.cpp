@@ -13,21 +13,20 @@ class Solution
     char getMaxOccuringChar(string str)
     {
         // Your code here
-        int maxi=INT_MIN;
         vector<int>v(26,0);
-        char ch;
-        for(int i=0;i<str.length();i++){
-            v[str[i]-'a']++;
-           
+        int maxi=INT_MIN;
+        int index=-1;
+        for(auto ch:str){
+            v[ch-'a']++;
+            
         }
         for(int i=0;i<26;i++){
-             if(v[i]>maxi){
+            if(v[i]>maxi){
                 maxi=v[i];
-                ch=i+'a';
+                index=i;
             }
         }
-        return ch;
-        
+        return 'a'+index;
     }
 
 };
