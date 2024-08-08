@@ -1,22 +1,17 @@
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        //Approach 1
-        int row=matrix.size();
-        int col=matrix[0].size();
-        int rowindex=0;
-        int colindex=col-1;
-        while(rowindex<row && colindex>=0){
-            int element=matrix[rowindex][colindex];
-            if(element==target){
+        int rows=matrix.size();
+        int cols=matrix[0].size();
+        int i=0,j=cols-1;
+        while(i<rows && j>=0){
+            if(matrix[i][j]==target){
                 return true;
             }
-            else if(element>target){
-                colindex--;
+            else if(matrix[i][j]>target){
+                j--;
             }
-            else{
-                rowindex++;
-            }
+            else i++;
         }
         return false;
     }
