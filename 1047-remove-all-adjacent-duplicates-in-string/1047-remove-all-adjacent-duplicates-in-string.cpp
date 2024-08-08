@@ -3,11 +3,11 @@ public:
     string removeDuplicates(string s) {
         string ans;
         for(int i=0;i<s.length();i++){
-            if(ans.empty()  || ans.back()!=s[i]){
-                ans+=s[i];
+            if(!ans.empty() && ans.back()==s[i]){
+                ans.pop_back();
             }
             else{
-                ans.pop_back();
+                ans+=s[i];
             }
         }
         return ans;
