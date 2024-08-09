@@ -9,13 +9,13 @@ using namespace std;
 
 class Solution{
   public:
-    vector<int>previousSmaller(int*arr,int n){
+    vector<int>prevSmaller(int*heights,int n){
         vector<int>ans(n);
         stack<int>st;
         st.push(-1);
         for(int i=0;i<n;i++){
-            int curr=arr[i];
-            while(st.top()!=-1 && arr[st.top()]>=curr){
+            int curr=heights[i];
+            while(st.top()!=-1 && heights[st.top()]>=curr){
                 st.pop();
             }
             ans[i]=st.top();
@@ -23,13 +23,13 @@ class Solution{
         }
         return ans;
     }
-    vector<int>nextSmaller(int*arr,int n){
+    vector<int>nextSmaller(int*heights,int n){
         vector<int>ans(n);
         stack<int>st;
         st.push(-1);
         for(int i=n-1;i>=0;i--){
-            int curr=arr[i];
-            while(st.top()!=-1 && arr[st.top()]>=curr){
+            int curr=heights[i];
+            while(st.top()!=-1 && heights[st.top()]>=curr){
                 st.pop();
             }
             ans[i]=st.top();
@@ -37,36 +37,36 @@ class Solution{
         }
         return ans;
     }
-    int largestRectangle(int*arr,int n){
-        vector<int>prev(n);
-        vector<int>next(n);
-        prev=previousSmaller(arr,n);
-        next=nextSmaller(arr,n);
+ int largestRectangle(int* heights,int n) {
+   // Write your code here.
+   
+        vector<int>prev(n),next(n);
+        prev=prevSmaller(heights,n);
+        next=nextSmaller(heights,n);
         int area=INT_MIN;
         for(int i=0;i<n;i++){
-            int l=arr[i];
+            int l=heights[i];
             if(next[i]==-1){
                 next[i]=n;
             }
             int b=next[i]-prev[i]-1;
             area=max(area,l*b);
-            
         }
         return area;
-    }
+ }
     int maxArea(int M[MAX][MAX], int n, int m) {
         // Your code here
         int area=largestRectangle(M[0],m);
         for(int i=1;i<n;i++){
             for(int j=0;j<m;j++){
                 if(M[i][j]==1){
-                    M[i][j]=M[i-1][j]+M[i][j];
+                    M[i][j]=M[i][j]+M[i-1][j];
                 }
                 else{
                     M[i][j]=0;
                 }
             }
-            area=max(largestRectangle(M[i],m),area);
+            area=max(area,largestRectangle(M[i],m));
         }
         return area;
     }
