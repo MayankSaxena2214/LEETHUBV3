@@ -1,11 +1,12 @@
 class Solution {
-public: 
-    vector<int>prevSmaller(vector<int>&arr,int n){
+public:
+    vector<int>prevSmaller(auto&heights,int n){
         vector<int>ans(n);
         stack<int>st;
         st.push(-1);
         for(int i=0;i<n;i++){
-            while(st.top()!=-1 && arr[st.top()]>=arr[i]){
+            int curr=heights[i];
+            while(st.top()!=-1 && heights[st.top()]>=curr){
                 st.pop();
             }
             ans[i]=st.top();
@@ -13,12 +14,13 @@ public:
         }
         return ans;
     }
-    vector<int>nextSmaller(vector<int>&arr,int n){
+    vector<int>nextSmaller(auto&heights,int n){
         vector<int>ans(n);
         stack<int>st;
         st.push(-1);
         for(int i=n-1;i>=0;i--){
-            while(st.top()!=-1 && arr[st.top()]>=arr[i]){
+            int curr=heights[i];
+            while(st.top()!=-1 && heights[st.top()]>=curr){
                 st.pop();
             }
             ans[i]=st.top();
@@ -28,8 +30,7 @@ public:
     }
     int largestRectangleArea(vector<int>& heights) {
         int n=heights.size();
-        vector<int>prev(n);
-        vector<int>next(n);
+        vector<int>prev(n),next(n);
         prev=prevSmaller(heights,n);
         next=nextSmaller(heights,n);
         int area=INT_MIN;
