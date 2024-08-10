@@ -20,17 +20,23 @@ class Solution
             st.push(q.front());
             q.pop();
         }
+        
         while(!st.empty()){
-            q.push(st.top());
+            int val=st.top();
             st.pop();
+            q.push(val);
         }
-        int count=q.size()-k;
-        while(count!=0){
-            q.push(q.front());
+        int rem=q.size()-k;
+        while(rem){
+            int val=q.front();
             q.pop();
-            count--;
+            q.push(val);
+            rem--;
         }
         return q;
+        
+        
+        
     }
 };
 
