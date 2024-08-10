@@ -48,14 +48,10 @@ class Solution{
         int data=pre[index++];
         Node*root=new Node(data);
         int pos=-1;
-        for(int i=0;i<n;i++){
+        for(int i=st;i<=end;i++){
             if(in[i]==data){
-                if(mp.find(i)!=mp.end())continue;
-                else{
-                    mp[i]=true;
-                    pos=i;
-                    break;
-                }
+                pos=i;
+                break;
             }
         }
         root->left=solve(in,pre,index,st,pos-1,n,mp);
