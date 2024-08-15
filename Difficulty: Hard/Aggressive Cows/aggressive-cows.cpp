@@ -9,36 +9,34 @@ using namespace std;
 
 class Solution {
 public:
-    bool isPossible(vector<int>&stalls,int n,int k,int mid){
-        int cows=1;
+    bool isPossible(vector<int>&stalls,int mid,int n,int k){
         int lastpos=stalls[0];
+        int cowcount=1;
         for(int i=0;i<n;i++){
             if(stalls[i]-lastpos>=mid){
-                cows+=1;
-                if(cows>=k)return true;
+                cowcount++;
+                if(cowcount==k)return true;
                 lastpos=stalls[i];
             }
-            
         }
         return false;
     }
     int solve(int n, int k, vector<int> &stalls) {
     
         // Write your code here
-        int s=0;
         sort(stalls.begin(),stalls.end());
+        int s=0;
         int e=stalls[n-1];
-        int mid=s+(e-s)/2;
-        int ans=-1;
+        int ans=0;
         while(s<=e){
-            if(isPossible(stalls,n,k,mid)){
+            int mid=(s+e)/2;
+            if(isPossible(stalls,mid,n,k)){
                 ans=mid;
                 s=mid+1;
             }
             else{
                 e=mid-1;
             }
-            mid=s+(e-s)/2;
         }
         return ans;
     }
