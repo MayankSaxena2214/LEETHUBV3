@@ -22,7 +22,7 @@ public:
         long long int low=*max_element(weights.begin(),weights.end());
         long long int high=accumulate(weights.begin(),weights.end(),0);
         long long int ans=-1;
-        while(low<high){
+        while(low<=high){
             long long int mid=(low+high)/2;
             if(isPossible(weights,days,mid)){
                 ans=mid;
