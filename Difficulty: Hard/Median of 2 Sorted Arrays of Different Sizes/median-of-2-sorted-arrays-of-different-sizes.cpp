@@ -11,64 +11,41 @@ double MedianOfArrays(vector<int>& array1, vector<int>& array2);
 
 class Solution{
     public:
-    double MedianOfArrays(vector<int>& array1, vector<int>& array2)
+    double MedianOfArrays(vector<int>& nums1, vector<int>& nums2)
     {
         // Your code goes here
-        int element1,element2;
-        int k=0;
-        int n=array1.size();
-        int m=array2.size();
-        int idx1=(n+m)/2;
-        int idx2=idx1-1;
-        int i=0,j=0;
-        while(i<n && j<m){
-            if(array1[i]<array2[j]){
-                if(k==idx1){
-                    element1=array1[i];
+        int n=nums1.size();
+        int m=nums2.size();
+        if(n>m)return MedianOfArrays(nums2,nums1);
+        
+        int l=0,r=n;
+        // l denote nums1 element are 1 and right denote nums1 element are n taken
+        while(l<=r){
+            int Px=(l+(r-l)/2);
+            int Py=(m+n+1)/2-Px;
+            
+            int x1=(Px==0)?INT_MIN:nums1[Px-1];
+            int y1=(Py==0)?INT_MIN:nums2[Py-1];
+            int x2=(Px==n)?INT_MAX:nums1[Px];
+            int y2=(Py==m)?INT_MAX:nums2[Py];
+            
+            if(x1<=y2 && y1<=x2){
+                if((n+m)%2==0){
+                    return (max(x1,y1)+min(x2,y2))/2.0;
                 }
-                if(k==idx2){
-                    element2=array1[i];
+                else{
+                    return max(x1,y1);
                 }
-                i++;
-                k++;
+            }
+            else if(x1>y2){
+                //zyada element le liye
+                r=Px-1;
             }
             else{
-                if(k==idx1){
-                    element1=array2[j];
-                }
-                if(k==idx2){
-                    element2=array2[j];
-                }
-                j++;
-                k++;
+                l=Px+1;
             }
         }
-        while(i<n){
-            if(k==idx1){
-                    element1=array1[i];
-                }
-                if(k==idx2){
-                    element2=array1[i];
-                }
-                i++;
-                k++;
-        }
-        while(j<m){
-            if(k==idx1){
-                    element1=array2[j];
-                }
-                if(k==idx2){
-                    element2=array2[j];
-                }
-                j++;
-                k++;
-        }
-        if((n+m)%2==0){
-            return ((element1+element2)/2.0);
-        }
-        else {
-            return element1;
-        }
+        return -1;
     
     }
 };
