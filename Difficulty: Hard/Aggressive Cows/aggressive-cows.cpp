@@ -9,13 +9,13 @@ using namespace std;
 
 class Solution {
 public:
-    bool isPossible(vector<int>&stalls,int mid,int n,int k){
+    bool isPossible(vector<int>&stalls,int n,int k,int mid){
+        int cow=1;
         int lastpos=stalls[0];
-        int cowcount=1;
         for(int i=0;i<n;i++){
             if(stalls[i]-lastpos>=mid){
-                cowcount++;
-                if(cowcount==k)return true;
+                cow++;
+                if(cow==k)return true;
                 lastpos=stalls[i];
             }
         }
@@ -24,13 +24,15 @@ public:
     int solve(int n, int k, vector<int> &stalls) {
     
         // Write your code here
+        int s=0,e;
+        int maxi=*max_element(stalls.begin(),stalls.end());
+        int mini=*min_element(stalls.begin(),stalls.end());
         sort(stalls.begin(),stalls.end());
-        int s=0;
-        int e=stalls[n-1];
-        int ans=0;
+        e=maxi-mini;
+        int ans=-1;
         while(s<=e){
-            int mid=(s+e)/2;
-            if(isPossible(stalls,mid,n,k)){
+            int mid=s+(e-s)/2;
+            if(isPossible(stalls,n,k,mid)){
                 ans=mid;
                 s=mid+1;
             }
