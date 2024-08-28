@@ -10,17 +10,16 @@ using namespace std;
 void toBinary(int N)
 {
     // your code here
-        int m=N;
-        int ans=0;
-        int i=0;
-        while(m!=0){
-            int bit=m&1;
-            ans=bit*pow(10,i)+ans;
-            
-            m=m>>1;
-            i++;
-        }
-        cout<<ans;
+    int ans=0;
+    int i=0;
+    while(N!=0){
+        int bit=N&1;
+        ans=bit*pow(10,i)+ans;
+        N=N>>1;
+        i++;
+    }
+    cout<<ans;
+        
 }
 
 //{ Driver Code Starts.
