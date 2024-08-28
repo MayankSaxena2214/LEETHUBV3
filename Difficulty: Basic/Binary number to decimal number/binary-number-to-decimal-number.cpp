@@ -7,8 +7,8 @@ class Solution {
   public:
     int binary_to_decimal(string str) {
         // Code here.
-        int ans=0;
         int i=0;
+        int ans=0;
         while(str.length()!=0){
             int bit=str[str.length()-1]=='1'?1:0;
             if(bit==1){
