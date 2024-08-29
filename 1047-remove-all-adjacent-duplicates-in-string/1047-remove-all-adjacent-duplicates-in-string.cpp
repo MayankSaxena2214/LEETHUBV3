@@ -7,7 +7,7 @@ public:
                 ans.pop_back();
             }
             else{
-                ans+=s[i];
+                ans.push_back(s[i]);
             }
         }
         return ans;
