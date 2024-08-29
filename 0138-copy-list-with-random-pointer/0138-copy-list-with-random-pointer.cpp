@@ -16,42 +16,26 @@ public:
 
 class Solution {
 public:
-    void insertTail(auto&anshead,auto&anstail,int digit){
-        Node*temp=new Node(digit);
-        if(anshead==NULL){
-            anshead=anstail=temp;
-            return;
-        }
-        else{
-            anstail->next=temp;
-            anstail=temp;
-        }
-    }
     Node* copyRandomList(Node* head) {
-        if(head==NULL)return NULL;
-        //clone the list with next pointer
-        Node*originalNode=head;
-        Node*cloneHead=NULL,*cloneTail=NULL;
-        while(originalNode!=NULL){
-            insertTail(cloneHead,cloneTail,originalNode->val);
-            originalNode=originalNode->next;
-        }
-        //create mapping
-        Node*cloneNode=cloneHead;
-        originalNode=head;
+        Node*cloneHead=new Node(-1);
+        Node*cloneTail=cloneHead;
+        Node*original=head;
         unordered_map<Node*,Node*>mp;
-        while(originalNode!=NULL && cloneNode!=NULL){
-            mp[originalNode]=cloneNode;
-            originalNode=originalNode->next;
-            cloneNode=cloneNode->next;
+        while(original!=NULL){
+            Node*temp=new Node(original->val);
+            cloneTail->next=temp;
+            cloneTail=temp;
+            mp[original]=cloneTail;
+            original=original->next;
         }
-        originalNode=head;
-        cloneNode=cloneHead;
-        while(originalNode!=NULL && cloneNode!=NULL){
-            cloneNode->random=mp[originalNode->random];
-            originalNode=originalNode->next;
-            cloneNode=cloneNode->next;
+        Node*clone=cloneHead->next;
+        original=head;
+        while(original!=NULL && clone!=NULL){
+            clone->random=mp[original->random];
+            clone =clone->next;
+            original=original->next;
         }
-        return cloneHead;
+        return cloneHead->next;
+
     }
 };
