@@ -17,6 +17,7 @@ class Solution
         // your code here
         vector<int>ans;
         deque<int>maxi;
+        deque<int>mini;
         for(int i=0;i<k;i++){
             int curr=arr[i];
             while(!maxi.empty() && arr[maxi.back()]<=curr){
@@ -24,19 +25,18 @@ class Solution
             }
             maxi.push_back(i);
         }
-        if(maxi.size()>0){
-            ans.push_back(arr[maxi.front()]);
-        }
+        ans.push_back(arr[maxi.front()]);
         for(int i=k;i<n;i++){
-            //removal 
+            //removal
             int curr=arr[i];
-            if(i-maxi.front()>=k)maxi.pop_front();
+            if(!maxi.empty() && i-maxi.front()>=k){
+                maxi.pop_front();
+            }
             while(!maxi.empty() && arr[maxi.back()]<=curr){
                 maxi.pop_back();
             }
             maxi.push_back(i);
             ans.push_back(arr[maxi.front()]);
-            
         }
         return ans;
     }
