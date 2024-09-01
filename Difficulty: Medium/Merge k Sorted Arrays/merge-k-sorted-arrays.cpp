@@ -13,14 +13,11 @@ for (int i=0; i < size; i++)
 
 // } Driver Code Ends
 //User function Template for C++
-
-
-class Solution
-{
+class Node{
     public:
-    class Node{
-    public:
-    int data,i,j;
+    int data;
+    int i;
+    int j;
     Node(int d,int row,int col){
         data=d;
         i=row;
@@ -33,26 +30,31 @@ class compare{
         return a->data>b->data;
     }
 };
+class Solution
+{
+    public:
     //Function to merge k sorted arrays.
-    vector<int> mergeKArrays(vector<vector<int>> kArrays, int K)
+    vector<int> mergeKArrays(vector<vector<int>> arr, int K)
     {
         //code here
-          vector<int>ans;
-    priority_queue<Node*,vector<Node*>,compare>pq;
-    for(int i=0;i<K;i++){
-        pq.push(new Node(kArrays[i][0],i,0));
-    }
-    while(pq.size()>0){
-        auto temp=pq.top();
-        pq.pop();
-        ans.push_back(temp->data);
-        int row=temp->i;
-        int col=temp->j;
-        if(col+1<kArrays[row].size()){
-            pq.push(new Node(kArrays[row][col+1],row,col+1));
+        vector<int>ans;
+        priority_queue<Node*,vector<Node*>,compare>pq;
+        for(int i=0;i<K;i++){
+            pq.push(new Node(arr[i][0],i,0));
         }
-    }
-    return ans;
+        while(pq.size()!=0){
+            auto front=pq.top();
+            pq.pop();
+            int data=front->data;
+            int i=front->i;
+            int j=front->j;
+            ans.push_back(data);
+            if(j+1<arr[i].size()){
+                pq.push(new Node(arr[i][j+1],i,j+1));
+            }
+            
+        }
+        return ans;
     }
 };
 
