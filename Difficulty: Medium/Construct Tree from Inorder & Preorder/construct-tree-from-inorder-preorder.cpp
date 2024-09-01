@@ -38,34 +38,32 @@ struct Node
   Node* right;
 };
 */
-#include<bits/stdc++.h>
 class Solution{
     public:
-    Node*solve(int*in,int*pre,int&index,int st,int end,int n,unordered_map<int,bool>&mp){
-        if(index>=n || st>end){
+    Node*solve(int*in,int*pre,int &index,int instart,int inend,int n){
+        if(instart>inend || index>=n){
             return NULL;
         }
-        int data=pre[index++];
-        Node*root=new Node(data);
+        int element=pre[index++];
         int pos=-1;
-        for(int i=st;i<=end;i++){
-            if(in[i]==data){
+        for(int i=instart;i<=inend;i++){
+            if(in[i]==element){
                 pos=i;
                 break;
             }
         }
-        root->left=solve(in,pre,index,st,pos-1,n,mp);
-        root->right=solve(in,pre,index,pos+1,end,n,mp);
+        Node*root=new Node(element);
+        root->left=solve(in,pre,index,instart,pos-1,n);
+        root->right=solve(in,pre,index,pos+1,inend,n);
         return root;
+        
     }
     Node* buildTree(int in[],int pre[], int n)
     {
         // Code here
         int index=0;
-        
-        unordered_map<int,bool>mp;
-      
-        return solve(in,pre,index,0,n-1,n,mp);
+        Node*ans=solve(in,pre,index,0,n-1,n);
+        return ans;
     }
 };
 
