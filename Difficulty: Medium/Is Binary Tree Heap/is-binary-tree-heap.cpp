@@ -96,33 +96,37 @@ class Solution {
         if(root==NULL)return 0;
         return 1+getTotal(root->left)+getTotal(root->right);
     }
-    bool isCbt(Node*root,int total,int index){
+    bool isComplete(Node*root,int index,int total){
         if(root==NULL)return true;
         if(index>=total){
             return false;
         }
-        bool left=isCbt(root->left,total,2*index+1);
-        bool right=isCbt(root->right,total,2*index+2);
+        bool left=isComplete(root->left,2*index+1,total);
+        bool right=isComplete(root->right,2*index+2,total);
         return left&&right;
     }
     bool isMax(Node*root){
         if(root==NULL)return true;
         if(root->left==NULL && root->right==NULL)return true;
+        
         if(root->right==NULL){
             return root->data>root->left->data;
         }
         else{
             bool left=isMax(root->left);
             bool right=isMax(root->right);
-            bool order=(root->data>root->left->data && root->data>root->right->data);
-            return left&&right&&order;
+            return left&&right&&(root->data>root->left->data && root->data>root->right->data);
         }
     }
     bool isHeap(struct Node* tree) {
         // code here
+        if(tree==NULL)return true;
         int total=getTotal(tree);
         int index=0;
-        return isCbt(tree,total,index) && isMax(tree);
+        if(isComplete(tree,index,total) && isMax(tree)){
+            return true;
+        }
+        return false;
     }
 };
 
