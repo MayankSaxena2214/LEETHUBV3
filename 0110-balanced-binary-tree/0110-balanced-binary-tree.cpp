@@ -11,15 +11,18 @@
  */
 class Solution {
 public:
-    pair<int,int> solve(auto&root){
+    pair<bool,int>solve(auto&root){
         if(root==NULL){
             return {true,0};
         }
         auto left=solve(root->left);
         auto right=solve(root->right);
-        pair<int,int>curr;
+        pair<bool,int>curr;
+        bool op1=left.first;
+        bool op2=right.first;
+        bool op3=abs(left.second-right.second)<=1;
+        curr.first=op1&&op2&&op3;
         curr.second=max(left.second,right.second)+1;
-        curr.first=left.first&&right.first&&(abs(left.second-right.second)<=1);
         return curr;
     }
     bool isBalanced(TreeNode* root) {
