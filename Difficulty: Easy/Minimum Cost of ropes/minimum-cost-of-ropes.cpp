@@ -4,29 +4,23 @@ using namespace std;
 
 
 // } Driver Code Ends
-class Solution
-{
-    public:
-    //Function to return the minimum cost of connecting the ropes.
-    long long minCost(long long arr[], long long n) {
+class Solution {
+  public:
+    // Function to return the minimum cost of connecting the ropes.
+    long long minCost(vector<long long>& arr) {
         // Your code here
-        priority_queue<long long,vector<long long>,greater<long long>>pq;
-        for(long long i=0;i<n;i++){
-            long long val=arr[i];
-            pq.push(val);
-            
-        }
         long long ans=0;
+        priority_queue<long long , vector<long long>,greater<long long>>pq;
+        for(int i=0;i<arr.size();i++){
+            pq.push(arr[i]);
+        }
         while(pq.size()>1){
             long long a=pq.top();
             pq.pop();
             long long b=pq.top();
             pq.pop();
-            long long sum=0;
-            sum+=a;
-            sum+=b;
-            ans+=sum;
-            pq.push(sum);
+            ans+=a+b;
+            pq.push(a+b);
         }
         return ans;
     }
@@ -38,15 +32,19 @@ class Solution
 int main() {
     long long t;
     cin >> t;
+    cin.ignore();
     while (t--) {
-        long long n;
-        cin >> n;
-        long long i, a[n];
-        for (i = 0; i < n; i++) {
-            cin >> a[i];
+        string input;
+        long long num;
+        vector<long long> a;
+
+        getline(cin, input);
+        stringstream s2(input);
+        while (s2 >> num) {
+            a.push_back(num);
         }
         Solution ob;
-        cout << ob.minCost(a, n) << endl;
+        cout << ob.minCost(a) << endl;
     }
     return 0;
 }
