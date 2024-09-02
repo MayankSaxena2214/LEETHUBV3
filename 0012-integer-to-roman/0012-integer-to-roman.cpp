@@ -6,18 +6,15 @@ public:
         vector<string>sym{"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
         
         for(int i=0;i<13;i++){
-            if(num==0)break;
             if(num>=val[i]){
-                int times=num/val[i];
-                int freq=times;
-                string temp=sym[i];
-                while(times){
-                    result+=temp;
-                    times--;
+                int count=num/val[i];
+                int freq=num/val[i];
+                while(count!=0){
+                    result+=sym[i];
+                    count--;
                 }
                 num=num-freq*val[i];
             }
-            
         }
         return result;
     }
