@@ -2,34 +2,38 @@ class Solution {
 public:
     vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
         vector<string>ans;
-        for(int i=0;i<words.size();i++){
+        for(auto word:words){
             map<char,char>mp1;
             map<char,char>mp2;
             bool flag=1;
-            for(int j=0;j<words[i].length();j++){
+            for(int j=0;j<word.length();j++){
+                if(word.length()!=pattern.length()){
+                    flag=0;
+                    break;
+                }
                 auto it1=mp1.find(pattern[j]);
-                auto it2=mp2.find(words[i][j]);
+                auto it2=mp2.find(word[j]);
                 if(it1==mp1.end()){
-                    mp1[pattern[j]]=words[i][j];
+                    mp1[pattern[j]]=word[j];
                 }
                 else{
-                    if(mp1[pattern[j]]!=words[i][j]){
+                    if(it1->second!=word[j]){
                         flag=0;
                         break;
                     }
                 }
                 if(it2==mp2.end()){
-                    mp2[words[i][j]]=pattern[j];
+                    mp2[word[j]]=pattern[j];
                 }
                 else{
-                    if(mp2[words[i][j]]!=pattern[j]){
+                    if(it2->second!=pattern[j]){
                         flag=0;
                         break;
                     }
                 }
             }
             if(flag==1){
-                ans.push_back(words[i]);
+                ans.push_back(word);
             }
         }
         return ans;
