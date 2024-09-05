@@ -11,20 +11,21 @@ public:
     long long countStrings(string s)
     {
         // code here
+        long long n=s.length();
+        vector<long long>count(26,0);
+        for(long long i=0;i<n;i++){
+            count[s[i]-'a']++;
+        }
+        bool isRepeat=false;
+        long long ans=(n*(n-1))/2;
+        for(int i =0;i<26;i++){
+            if(count[i]>1){
+                isRepeat=true;
+            }
+            ans-=((count[i]*(count[i]-1))/2);
+        }
+        return isRepeat?ans+1:ans;
         
-        long long ans=0;
-        long long  n=s.length();
-        ans=(n*(n-1))/2;
-        vector<long long>v(26,0);
-        for(char ch:s){
-            v[ch-'a']++;
-        }
-        bool repeat=false;
-        for(int i=0;i<26;i++){
-            if(v[i]>1)repeat=true;
-            ans-=(v[i]*(v[i]-1))/2;
-        }
-        return repeat?ans+1:ans;
     }
 };
 
