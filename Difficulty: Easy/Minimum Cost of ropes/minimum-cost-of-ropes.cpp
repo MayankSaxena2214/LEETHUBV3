@@ -10,17 +10,15 @@ class Solution {
     long long minCost(vector<long long>& arr) {
         // Your code here
         long long ans=0;
-        priority_queue<long long , vector<long long>,greater<long long>>pq;
-        for(int i=0;i<arr.size();i++){
-            pq.push(arr[i]);
-        }
+        priority_queue<long long,vector<long long>,greater<long long>>pq(arr.begin(),arr.end());
         while(pq.size()>1){
             long long a=pq.top();
             pq.pop();
             long long b=pq.top();
             pq.pop();
-            ans+=a+b;
-            pq.push(a+b);
+            long long sum=a+b;
+            ans+=sum;
+            pq.push(sum);
         }
         return ans;
     }
