@@ -1,36 +1,48 @@
 //{ Driver Code Starts
-#include <bits/stdc++.h>
+#include <iostream>
+#include <limits.h>
+#include <sstream>
+#include <vector>
+
 using namespace std;
+
 
 // } Driver Code Ends
 
-class Solution{
-    public:
-    int maxTripletSum(int arr[], int n)
-    {
-        if(n<3){
-            return -1;
-        }
-        sort(arr,arr+n);
-        return arr[n-1]+arr[n-2]+arr[n-3];
+
+#include<bits/stdc++.h>
+class Solution {
+  public:
+    // Function to find the maximum triplet sum in the array.
+    int maxTripletSum(vector<int> &arr) {
+        // Complete the function
+        int n=arr.size();
+        if(n<3)return -1;
+        sort(arr.begin(),arr.end());
+        return arr[n-3]+arr[n-2]+arr[n-1];
     }
 };
 
 //{ Driver Code Starts.
-int main()
-{
-	int t;
-	cin>>t;
-	while(t--)
-	{
-	    int n,i;
-	    cin>>n; int a[n];
-	    for(i=0;i<n;i++)
-	    cin>>a[i];
-	    Solution ob;
-	    cout <<ob.maxTripletSum(a, n);
-	    cout<<"\n";
-	}
-return 0;
+
+int main() {
+    string ts;
+    getline(cin, ts);
+    int t = stoi(ts);
+
+    while (t--) {
+        string line;
+        getline(cin, line);
+        stringstream ss(line);
+        vector<int> nums;
+        int num;
+        while (ss >> num) {
+            nums.push_back(num);
+        }
+        Solution ob; // Move the class instantiation here
+        cout << ob.maxTripletSum(nums) << "\n";
+    }
+    return 0;
 }
+
 // } Driver Code Ends
