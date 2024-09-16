@@ -1,44 +1,24 @@
 class Solution {
 public:
-char toLower(char ch){
-    if(ch>='a' && ch<='z'){
-        return ch;
-    }
-    else {
-        char ret=ch-'A'+'a';
-        return ret;
-    }
-}
-char toUpper(char ch){
-    if(ch>='a' && ch<='z'){
-        char ret=ch-'a'+'A';
-        return ret;
-    }
-    else {
-        return ch;
-    }
-}
-    void solve(string str,auto&ans,string path,int index,int n){
-        if(index==n){
-            ans.push_back(path);
-            return;
+    void solve(string str,auto&ans,auto temp,int index){
+        if(index>=str.length()){
+            ans.push_back(temp);
+            return ;
         }
         if(str[index]>='0' && str[index]<='9'){
-            solve(str,ans,path+str[index],index+1,n);
+            solve(str,ans,temp+str[index],index+1);
         }
         else{
-            //lowercase call
-            solve(str,ans,path+toLower(str[index]),index+1,n);
-            //uppercase call
-            solve(str,ans,path+toUpper(str[index]),index+1,n);
+            solve(str,ans,temp+(char)tolower(str[index]),index+1);
+            solve(str,ans,temp+(char)toupper(str[index]),index+1);
+            
         }
     }
     vector<string> letterCasePermutation(string s) {
         vector<string>ans;
-        string path;
+        string temp="";
         int index=0;
-        int n=s.length();
-        solve(s,ans,path,index,n);
+        solve(s,ans,temp,index);
         return ans;
     }
 };
