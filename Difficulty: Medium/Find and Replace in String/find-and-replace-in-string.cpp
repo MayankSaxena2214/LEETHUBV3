@@ -10,21 +10,19 @@ class Solution {
   public:
     string findAndReplace(string S ,int Q, int index[], string sources[], string targets[]) {
         // code here
-        int newLength=0;
         string original=S;
+        int newlength=0;
         for(int i=0;i<Q;i++){
             
             auto found=original.find(sources[i]);
-            
             while(found!=string::npos){
                 if(found==index[i]){
-                    S.replace(found+newLength,sources[i].length(),targets[i]);
-                    newLength+=targets[i].length()-sources[i].length();
-                    
+                    S.replace(found+newlength,sources[i].length(),targets[i]);
+                    newlength+=targets[i].length()-sources[i].length();
                 }
                 found=original.find(sources[i],found+1);
-                
             }
+            
         }
         return S;
     }
