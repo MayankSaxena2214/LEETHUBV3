@@ -7,11 +7,11 @@ public:
         
         for(int i=0;i<13;i++){
             if(num>=val[i]){
-                int count=num/val[i];
-                int freq=num/val[i];
-                while(count!=0){
+                int times=num/val[i];
+                int freq=times;
+                while(times!=0){
                     result+=sym[i];
-                    count--;
+                    times--;
                 }
                 num=num-freq*val[i];
             }
