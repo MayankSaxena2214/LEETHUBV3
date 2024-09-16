@@ -7,7 +7,7 @@ public:
             map<char,char>mp2;
             bool flag=1;
             for(int j=0;j<word.length();j++){
-                if(word.length()!=pattern.length()){
+                if(pattern.length()!=word.length()){
                     flag=0;
                     break;
                 }
