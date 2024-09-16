@@ -10,29 +10,28 @@
  * };
  */
 class Solution {
-public: 
-const int M=1e9+7;
-    long long getTotal(TreeNode*root){
+public:
+    static const int e=1e9+7;
+    long long getSum(auto&root){
         if(root==NULL)return 0;
-        return root->val+getTotal(root->left)+getTotal(root->right);
+        return root->val+getSum(root->left)+getSum(root->right);
     }
-    long long solve(TreeNode*root,long long&ans,long long total){
-        if(root==NULL)return 0;
-        long long subtree=0;
-        subtree+=root->val;
-        subtree+=solve(root->left,ans,total);
-        subtree+=solve(root->right,ans,total);
-        if((total-subtree)*subtree>ans){
-            ans=(total-subtree)*subtree;
-
+    long long int solve(auto&root,auto&maxi,auto&total){
+        if(root==NULL){
+            return 0;
         }
-        return subtree;
+        long long subtreesum=root->val;
+        subtreesum+=solve(root->left,maxi,total);
+        subtreesum+=solve(root->right,maxi,total);
+        if((total-subtreesum)*subtreesum>maxi){
+            maxi=(total-subtreesum)*subtreesum;
+        }
+        return subtreesum;
     }
     int maxProduct(TreeNode* root) {
-        if(root==NULL)return 0;
-        long long total=getTotal(root);
-        long long ans=INT_MIN;
-        solve(root,ans,total);
-        return ans%M;
+        long long sum=getSum(root);
+        long long int maxi=INT_MIN;
+        solve(root,maxi,sum);
+        return maxi%e;
     }
 };
