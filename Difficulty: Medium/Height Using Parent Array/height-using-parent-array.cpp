@@ -9,18 +9,17 @@ using namespace std;
 
 class Solution{
 public:
-    
     int findHeight(int N, int arr[]){
         // code here
         int ans=0;
         for(int i=0;i<N;i++){
-            int temp=1;
-            int value=arr[i];
-            while(value!=-1){
-                temp++;
-                value=arr[value];
+            int val=arr[i];
+            int count=1;
+            while(val!=-1){
+                count++;
+                val=arr[val];
             }
-            ans=max(ans,temp);
+            ans=max(ans,count);
         }
         return ans;
     }
