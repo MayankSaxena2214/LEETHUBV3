@@ -6,16 +6,17 @@ public:
             mp[s[i]].push_back(i);
         }
         int count=0;
-        for(int i=0;i<words.size();i++){
+        for(auto word:words){
             int latest=-1;
-            string curr=words[i];
-            for(int j=0;j<curr.length();j++){
-                auto it=upper_bound(mp[curr[j]].begin(),mp[curr[j]].end(),latest);
-                if(it==mp[curr[j]].end()){
+            for(int j=0;j<word.length();j++){
+                auto it=upper_bound(mp[word[j]].begin(),mp[word[j]].end(),latest);
+                if(it==mp[word[j]].end()){
                     break;
                 }
                 latest=*it;
-                if(j==curr.length()-1)count++;
+                if(j==word.length()-1){
+                    count++;
+                }
             }
         }
         return count;
