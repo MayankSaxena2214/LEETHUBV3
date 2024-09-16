@@ -11,21 +11,16 @@
  */
 class Solution {
 public:
-
-   
-    void transformTree( TreeNode *root,int&sum)
-    {
-        //code here
+    void solve(auto&root,int &sum){
         if(root==NULL)return;
-        transformTree(root->right,sum);
-        int copy=root->val;
-        sum+=copy;
+        solve(root->right,sum);
+        sum+=root->val;
         root->val=sum;
-        transformTree(root->left,sum);
+        solve(root->left,sum);
     }
     TreeNode* bstToGst(TreeNode* root) {
         int sum=0;
-        transformTree(root,sum);
+        solve(root,sum);
         return root;
     }
 };
