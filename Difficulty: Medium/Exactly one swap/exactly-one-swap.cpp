@@ -8,24 +8,24 @@ using namespace std;
 class Solution
 {
 public:
-    long long countStrings(string s)
+    long long countStrings(string S)
     {
         // code here
-        long long n=s.length();
-        vector<long long>count(26,0);
-        for(long long i=0;i<n;i++){
-            count[s[i]-'a']++;
+        vector<long long>v(26,0);
+        long long n=S.length();
+        for(int i=0;i<S.length();i++){
+            v[S[i]-'a']++;
         }
-        bool isRepeat=false;
         long long ans=(n*(n-1))/2;
-        for(int i =0;i<26;i++){
-            if(count[i]>1){
-                isRepeat=true;
+        bool flag=false;
+        for(int i=0;i<26;i++){
+            if(v[i]>1){
+                flag=true;
             }
-            ans-=((count[i]*(count[i]-1))/2);
+            ans-=((v[i]*(v[i]-1))/2);
         }
-        return isRepeat?ans+1:ans;
-        
+        if(flag) return ans+1;
+        return ans;
     }
 };
 
