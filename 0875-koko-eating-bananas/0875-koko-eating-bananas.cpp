@@ -1,25 +1,25 @@
 class Solution {
 public:
-    long long int solve(auto & piles,int mid,int h){
-        long long int mytime=0;
+    long long fnc(auto&piles,int mid){
+        long long time=0;
         for(int i=0;i<piles.size();i++){
             if(piles[i]%mid==0){
-                mytime+=piles[i]/mid;
+                time+=piles[i]/mid;
             }
             else{
-                mytime+=piles[i]/mid;
-                mytime+=1;
+                time+=piles[i]/mid;
+                time+=1;
             }
         }
-        return mytime;
+        return time;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-        long long int low=1;
-        long long int high=*max_element(piles.begin(),piles.end());
-        int ans=-1;
+        long long low=1;
+        long long high=*max_element(piles.begin(),piles.end());
+        long long ans=-1;
         while(low<=high){
-            long long int mid=(low+(high-low)/2);
-            long long int time=solve(piles,mid,h);
+            long long mid=(low+high)/2;
+            long long time=fnc(piles,mid);
             if(time<=h){
                 ans=mid;
                 high=mid-1;
