@@ -2,31 +2,20 @@ class Solution {
 public:
     int garbageCollection(vector<string>& garbage, vector<int>& travel) {
         int ans=0;
-        int index=0;
-        int i=0,j=0,k=0;
+        int i=0;
+        int n=garbage.size();
+        int gindex=0,mindex=0,pindex=0;
         for(auto str:garbage){
+            if(str.find('G')!=string::npos)gindex=i;
+            if(str.find('M')!=string::npos)mindex=i;
+            if(str.find('P')!=string::npos)pindex=i;
             ans+=str.length();
-            if(str.find('G')!=string::npos){
-                i=index;
-            }
-            if(str.find('P')!=string::npos){
-                j=index;
-            }
-            if(str.find('M')!=string::npos){
-                k=index;
-            }
-            index++;
+            i++;
         }
-        for(int itr=0;itr<travel.size();itr++){
-            if(itr<i){
-                ans+=travel[itr];
-            }
-            if(itr<j){
-                ans+=travel[itr];
-            }
-            if(itr<k){
-                ans+=travel[itr];
-            }
+        for(int j=0;j<travel.size();j++){
+            if(gindex>j)ans+=travel[j];
+            if(mindex>j)ans+=travel[j];
+            if(pindex>j)ans+=travel[j];
         }
         return ans;
     }
