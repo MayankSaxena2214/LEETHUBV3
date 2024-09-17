@@ -1,20 +1,20 @@
 class Solution {
 public:
     vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c) {
-        int row=mat.size();
-        int col=mat[0].size();
-        if(row*col!=r*c)return mat;
-        int x=0,y=0;
+        int rows=mat.size();
+        int cols=mat[0].size();
+        if(r*c!=rows*cols)return mat;
         vector<vector<int>>ans(r,vector<int>(c,0));
-        for(int i=0;i<row;i++){
-            
-            for(int j=0;j<col;j++){
-                ans[x][y]=mat[i][j];
-                y++;
-                if(y==c){
-                    y=0;
-                    x++;
+        int row=0,col=0;
+        for(int i=0;i<rows;i++){
+            for(int j =0;j<cols;j++){
+                ans[row][col]=mat[i][j];
+                col++;
+                if(col==c){
+                    col=0;
+                    row++;
                 }
+
             }
         }
         return ans;
