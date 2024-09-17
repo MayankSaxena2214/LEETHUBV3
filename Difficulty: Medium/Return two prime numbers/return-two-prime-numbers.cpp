@@ -12,24 +12,18 @@ class Solution {
   public:
     vector<int> primeDivision(int n) {
         // code here
-        vector<int>ans;
-        vector<bool>prime(n+2,true);
-        prime[0]=false;
-        prime[1]=false;
-        for(int i=2;i<=n;i++){
+        vector<bool>prime(n+1,true);
+        for(int i=2;i*i<n;i++){
             if(prime[i]){
                 for(int j=2*i;j<n;j+=i){
-                    prime[j]=false;
-                }
+                    prime[j]=false;    
+                }        
             }
         }
-        for(int i=2;i<=n;i++){
-            if(prime[i] && prime[n-i]){
-                ans.push_back(i);
-                ans.push_back(n-i);
-            }
+        for(int i=2;i<n;i++){
+            if(prime[i] && prime[n-i])return {i,n-i};
         }
-        return ans;
+        return {};
     }
 };
 
