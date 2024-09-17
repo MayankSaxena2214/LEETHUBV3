@@ -2,22 +2,19 @@ class Solution {
 public:
     bool increasingTriplet(vector<int>& nums) {
         int n=nums.size();
-        if(n<3)return false;
-        vector<int>right(n);
+        vector<int>suffix(n,0);
         for(int i=n-1;i>=0;i--){
-            if(i==n-1){
-                right[i]=nums[i];
-            }
+            if(i==n-1)suffix[i]=nums[i];
             else{
-                right[i]=max(right[i+1],nums[i]);
+                suffix[i]=max(suffix[i+1],nums[i]);
             }
         }
         set<int>st;
         st.insert(nums[0]);
-        for(int i =1;i<n;i++){
+        for(int i=1;i<n;i++){
             st.insert(nums[i]);
             auto it=st.find(nums[i]);
-            if(it!=st.begin() && right[i]!=nums[i]){
+            if(it!=st.begin() && suffix[i]!=nums[i]){
                 return true;
             }
         }
