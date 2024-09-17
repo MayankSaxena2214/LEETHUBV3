@@ -10,24 +10,24 @@ public:
 	int longSubarrWthSumDivByK(int arr[], int n, int k)
 	{
 	    // Complete the function
-	    unordered_map<int,int>st;
-	    st.insert({0,-1});
+	    unordered_map<int,int>mp;
+	    mp[0]=-1;
 	    int ans=0;
-	    long long sum=0;
+	    int prevsum=0;
 	    for(int i=0;i<n;i++){
-	        sum+=arr[i];
-	        int rem=sum%k;
+	        prevsum+=arr[i];
+	        int rem=prevsum%k;
 	        if(rem<0)rem+=k;
-	        auto it=st.find(rem);
-	        if(it!=st.end()){
-	            ans=max(ans,i-it->second);
-	            
+	        if(mp.find(rem)==mp.end()){
+	            mp[rem]=i;
 	        }
 	        else{
-	            st.insert({rem,i});
+	            ans=max(ans,i-mp[rem]);
 	        }
 	    }
 	    return ans;
+	    
+	    
 	}
 };
 
