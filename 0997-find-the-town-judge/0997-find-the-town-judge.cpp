@@ -1,15 +1,20 @@
 class Solution {
 public:
     int findJudge(int n, vector<vector<int>>& trust) {
-        unordered_set<int>st;
-        unordered_map<int,int>mp;
-        for(int i=0;i<trust.size();i++){
-            st.insert(trust[i][0]);
-            mp[trust[i][1]]++;
+        if(trust.size()==0 && n==1){
+            return 1;
         }
-        for(auto it:mp){
-            if(st.find(it.first)==st.end() && mp[it.first]==n-1){
-                return it.first;
+        unordered_map<int,int>mp;
+        unordered_set<int>st;
+        for(auto arr:trust){
+            mp[arr[1]]++;
+            st.insert(arr[0]);
+        }
+        for(auto i:mp){
+            if(i.second==n-1){
+                if(st.find(i.first)==st.end()){
+                    return i.first;
+                }
             }
         }
         return -1;
