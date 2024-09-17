@@ -1,21 +1,23 @@
 class Solution {
 public:
-    double radius,xr,yr;
+    double radius;
+    double x;
+    double y;
     Solution(double radius, double x_center, double y_center) {
         this->radius=radius;
-        xr=x_center;
-        yr=y_center;
+        this->x=x_center;
+        this->y=y_center;
     }
     
     vector<double> randPoint() {
         double length,theta;
         double rand1=(double)rand()/RAND_MAX;
-        theta=rand1*2*M_PI;
+        theta=2*rand1*(22/7.0);
         double rand2=(double)rand()/RAND_MAX;
         length=sqrt(rand2)*radius;
-        double x=xr+length*cos(theta);
-        double y=yr+length*sin(theta);
-        return {x,y};
+        double xcord=x+length*cos(theta);
+        double ycord=y+length*sin(theta);
+        return {xcord,ycord};
     }
 };
 
