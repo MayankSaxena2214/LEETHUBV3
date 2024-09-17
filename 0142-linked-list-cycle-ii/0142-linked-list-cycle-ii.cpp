@@ -8,28 +8,26 @@
  */
 class Solution {
 public:
-    ListNode*getIntersect(ListNode*head){
-    ListNode*slow=head,*fast=head;
-    while(fast!=NULL){
-        slow=slow->next;
-        fast=fast->next;
-        if(fast!=NULL)fast=fast->next;
-        if(slow==fast)return slow;
-    }
-    return NULL;
-}
-ListNode*getCycle(ListNode*head){
-    if(head==NULL)return NULL;
-    ListNode*intersect=getIntersect(head);
-    if(intersect==NULL)return NULL;
-    ListNode*temp=head;
-    while(temp!=intersect){
-        temp=temp->next;
-        intersect=intersect->next;
-    }
-    return temp;
-}
     ListNode *detectCycle(ListNode *head) {
-        return getCycle(head);
+        if(head==NULL || head->next==NULL)return NULL;
+        ListNode*slow=head,*fast=head;
+        bool cycle=false;
+        while(fast && fast->next){
+            slow=slow->next;
+            fast=fast->next->next;
+            if(slow==fast){
+                cycle=true;
+                break;
+            }
+        }
+        if(cycle==false){
+            return NULL;
+        }
+        fast=head;
+        while(slow!=fast){
+            slow=slow->next;
+            fast=fast->next;
+        }
+        return slow;
     }
 };
