@@ -1,9 +1,10 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        vector<vector<int>>ans;
         int n=intervals.size();
+        vector<vector<int>>ans;
         sort(intervals.begin(),intervals.end());
+        if(n==0)return ans;
         ans.push_back(intervals[0]);
         for(int i=1;i<n;i++){
             auto&v=ans.back();
