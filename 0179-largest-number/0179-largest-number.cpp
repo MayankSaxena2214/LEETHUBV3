@@ -1,21 +1,27 @@
 class Solution {
 public:
-    static bool cmp(string a,string b){
-        if(a+b > b+a)return true;
+    static bool custom(string a,string b){
+        if(a+b>b+a)return true;
         return false;
     }
     string largestNumber(vector<int>& nums) {
-        vector<string>arr;
+        vector<string>temp;
         for(auto val:nums){
-            arr.push_back(to_string(val));
+            temp.push_back(to_string(val));
         }
-        sort(arr.begin(),arr.end(),cmp);
         string ans;
-        for(auto str:arr){
+        sort(temp.begin(),temp.end(),custom);
+        for(auto str:temp){
             ans+=str;
         }
-        //now remove the starting zeroers i.e. 0000
-        if(ans[0]=='0')return "0";
-        return ans;      
+        int i=0;
+        while(ans[i]=='0'){
+            i++;
+        }
+        if(i>=ans.size()){
+            return "0";
+        }
+        
+        return ans.substr(i);
     }
 };
