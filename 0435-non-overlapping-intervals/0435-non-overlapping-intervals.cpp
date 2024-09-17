@@ -1,15 +1,16 @@
 class Solution {
 public:
     int eraseOverlapIntervals(vector<vector<int>>& intervals) {
-        int prev=0;
-        int curr=1;
-        int ans=0;
+        int n=intervals.size();
+        int prev=0,curr=1;
+        int count=0;
         sort(intervals.begin(),intervals.end());
-        while(curr<intervals.size()){
-            if(intervals[curr][0]<intervals[prev][1]){
-                //overlapping found
-                ans++;
-                if(intervals[prev][1]>=intervals[curr][1]){
+        while(curr<n){
+            if(intervals[prev][1]>intervals[curr][0]){
+                count++;
+                //which to removde
+                if(intervals[prev][1]>intervals[curr][1]){
+                    //delete prev
                     prev=curr;
                     curr++;
                 }
@@ -22,6 +23,6 @@ public:
                 curr++;
             }
         }
-        return ans;
+        return count;
     }
 };
