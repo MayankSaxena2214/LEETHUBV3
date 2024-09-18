@@ -3,12 +3,13 @@ public:
     void solve(vector<int>&arr,int n,int index,int &count){
         if(index>=n){
             count++;
+
             return;
         }
 
         for(int i=index;i<n;i++){
             swap(arr[i],arr[index]);
-            if((arr[i]%(i+1)==0) || ((i+1)%arr[i]==0)){
+            if((arr[index]%(index+1)==0) || ((index+1)%arr[index]==0)){
                 solve(arr,n,index+1,count);
             }
             swap(arr[i],arr[index]);
