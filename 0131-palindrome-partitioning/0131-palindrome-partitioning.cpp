@@ -1,30 +1,28 @@
 class Solution {
 public:
-    bool isPalindrome(string s){
-        string temp=s;
+    bool isPalindrome(string str){
+        string temp=str;
         reverse(temp.begin(),temp.end());
-        return s==temp;
+        return temp==str;
     }
-    void solve(string s,auto&ans,auto&v){
-        if(s.length()==0){
-            cout<<"reached"<<endl;
-            ans.push_back(v);
+    void solve(vector<vector<string>>&ans,vector<string>temp,string s){
+        if(s.length()<1){
+            ans.push_back(temp);
             return;
         }
-        for(int i=1;i<=s.length();i++){
-            string first=s.substr(0,i);
-            string second=s.substr(i);
+        for(int len=1;len<=s.length();len++){
+            string first=s.substr(0,len);
             if(isPalindrome(first)){
-                v.push_back(first);
-                solve(second,ans,v);
-                v.pop_back();
+                temp.push_back(first);
+                solve(ans,temp,s.substr(len,s.length()-len));
+                temp.pop_back();
             }
         }
     }
     vector<vector<string>> partition(string s) {
         vector<vector<string>>ans;
-        vector<string>v;
-        solve(s,ans,v);
+        vector<string>temp;
+        solve(ans,temp,s);
         return ans;
     }
 };
