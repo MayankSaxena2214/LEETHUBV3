@@ -2,44 +2,55 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 // } Driver Code Ends
 
-class Solution
-{
-    public:
-    //Function to reverse words in a given string.
-    string reverseWords(string S) 
-    { 
-        // code here 
-        stringstream ss(S);
-        vector<string>temp;
-        string buff;
-        while(getline(ss,buff,'.')){
-            temp.push_back(buff);
+class Solution {
+  public:
+    // Function to reverse words in a given string.
+    string reverseWords(string str) {
+        // code here
+        string curr;
+        vector<string>ans;
+        int index=0;
+        for(auto ch:str){
+            if(ch=='.'){
+                ans.push_back(curr);
+                curr="";
+            }
+            else{
+                curr+=ch;
+            }
+            if(index==str.length()-1){
+                ans.push_back(curr);
+                curr="";
+            }
+            index++;
         }
-        string ans;
-        if(temp.size()==0)return "";
-        int n=temp.size();
-        for(int i=n-1;i>=0;i--){
-            ans+=temp[i];
-            ans+='.';
+        
+        
+        for(int i=ans.size()-1;i>=0;i--){
+            if(i==0){
+                curr+=ans[i];
+            }    
+            else{
+                curr+=ans[i];
+                curr+='.';
+            }
         }
-        ans.pop_back();
-        return ans;
-    } 
+        return curr;
+    }
 };
 
 //{ Driver Code Starts.
-int main() 
-{
+int main() {
     int t;
     cin >> t;
-    while (t--) 
-    {
+    while (t--) {
         string s;
         cin >> s;
         Solution obj;
-        cout<<obj.reverseWords(s)<<endl;
+        cout << obj.reverseWords(s) << endl;
     }
 }
 // } Driver Code Ends
