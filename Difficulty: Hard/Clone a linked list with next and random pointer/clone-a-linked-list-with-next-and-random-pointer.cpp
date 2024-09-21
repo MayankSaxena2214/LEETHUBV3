@@ -11,12 +11,12 @@ using namespace std;
 struct Node {
     int data;
     Node *next;
-    Node *arb;
+    Node *random;
 
     Node(int x) {
         data = x;
         next = NULL;
-        arb = NULL;
+        random = NULL;
     }
 };
 
@@ -24,10 +24,10 @@ void print(Node *root) {
     Node *temp = root;
     while (temp != NULL) {
         int k;
-        if (temp->arb == NULL)
+        if (temp->random == NULL)
             k = -1;
         else
-            k = temp->arb->data;
+            k = temp->random->data;
         cout << temp->data << " " << k << " ";
         temp = temp->next;
     }
@@ -50,10 +50,10 @@ bool validation(Node *head, Node *res) {
     while (temp1 != NULL && temp2 != NULL) {
         if (temp1->data != temp2->data)
             return false;
-        if ((temp1->arb == NULL && temp2->arb != NULL) ||
-            (temp1->arb != NULL && temp2->arb == NULL) ||
-            (temp1->arb != NULL && temp2->arb != NULL &&
-             temp1->arb->data != temp2->arb->data))
+        if ((temp1->random == NULL && temp2->random != NULL) ||
+            (temp1->random != NULL && temp2->random == NULL) ||
+            (temp1->random != NULL && temp2->random != NULL &&
+             temp1->random->data != temp2->random->data))
             return false;
         temp1 = temp1->next;
         temp2 = temp2->next;
@@ -67,52 +67,44 @@ bool validation(Node *head, Node *res) {
 struct Node {
     int data;
     Node *next;
-    Node *arb;
+    Node *random;
 
     Node(int x) {
         data = x;
         next = NULL;
-        arb = NULL;
+        random = NULL;
     }
 };*/
 
 class Solution {
   public:
-  void insertTail(Node*&anshead,Node*&anstail,int data){
-        Node*temp=new Node(data);
-        if(anshead==NULL){
-            anshead=anstail=temp;
-            
-        }
-        else{
-            anstail->next=temp;
-            anstail=temp;
-        }
-    }
     Node *copyList(Node *head) {
         // Write your code here
-        Node*cloneHead=NULL,*cloneTail=NULL;
-        Node*original=head;
-        while(original!=NULL){
-            insertTail(cloneHead,cloneTail,original->data);
-            original=original->next;
+        Node*temp=head;
+        Node*ptr=new Node(0);
+        Node*cloneTail=ptr;
+        while(temp!=NULL){
+            Node*cloneNode=new Node(temp->data);
+            cloneTail->next=cloneNode;
+            cloneTail=cloneNode;
+            temp=temp->next;
         }
-        Node*cloneNode=cloneHead;
-        original=head;
         unordered_map<Node*,Node*>mp;
-        while(original!=NULL && cloneNode!=NULL){
-            mp[original]=cloneNode;
-            original=original->next;
+        Node*cloneNode=ptr->next;
+        temp=head;
+        while(temp){
+            mp[temp]=cloneNode;
+            temp=temp->next;
             cloneNode=cloneNode->next;
         }
-        cloneNode=cloneHead;
-        original=head;
-        while(cloneNode!=NULL && original!=NULL){
-            cloneNode->arb=mp[original->arb];
-            original=original->next;
+        temp=head;
+        cloneNode=ptr->next;
+        while(temp!=NULL){
+            cloneNode->random=mp[temp->random];
             cloneNode=cloneNode->next;
+            temp=temp->next;
         }
-        return cloneHead;
+        return ptr->next;
     }
 };
 
@@ -158,12 +150,15 @@ int main() {
                 tempB = tempB->next;
             }
 
-            tempA->arb = tempB;
+            tempA->random = tempB;
         }
 
         Solution ob;
         Node *res = ob.copyList(head);
-
+        if (res == head) {
+            cout << "false" << endl;
+            continue;
+        }
         if (validation(head, res)) {
             cout << "true" << endl;
         } else {
