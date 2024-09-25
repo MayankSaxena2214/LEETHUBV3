@@ -38,56 +38,19 @@ struct Node {
 class Solution {
   public:
     // Function to check whether the list is palindrome.
-    /* Linked List Node structure:
-
-struct Node
-{
-    int data;
-    struct Node *next;
-}
-
-*/
-
-
-    struct Node* reverseList(struct Node* head) {
-        // code here
-        // return head of reversed list
-        Node*prev=NULL,*curr=head,*forw=NULL;
-        while(curr!=NULL){
-            forw=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=forw;
-        }
-        return prev;
-    }
-
-    Node*findMid(Node*head){
-        if(head==NULL || head->next==NULL)return head;
-        Node*slow=head;
-        Node*fast=head->next;
-        while(fast && fast->next!=NULL){
-            slow=slow->next;
-            fast=fast->next;
-            if(fast->next!=NULL)fast=fast->next;
-        }
-        return slow;
-    }
     bool isPalindrome(Node *head) {
-        // Your code here
-        Node*mid=findMid(head);
-        Node*temp=mid;
-        Node*head2=reverseList(mid->next);
-        Node*head1=head;
-        while(head1 && head2){
-            if(head1->data!=head2->data){
-                return false;
-            }
-            head1=head1->next;
-            head2=head2->next;
+        // Your code 
+        vector<int>arr;
+        Node*temp=head;
+        while(temp){
+            arr.push_back(temp->data);
+            temp=temp->next;
+        }
+        int s=0,e=arr.size()-1;
+        while(s<e){
+            if(arr[s++]!=arr[e--])return false;
         }
         return true;
-        
     }
 };
 
