@@ -9,26 +9,26 @@ public:
         int total=rows*cols;
         vector<int>ans;
         while(count<total){
-            for(int col=colst;col<=colend && count<total;col++){
-                ans.push_back(matrix[rowst][col]);
+            for(int i=colst;i<=colend && count<total;i++){
+                ans.push_back(matrix[rowst][i]);
                 count++;
             }
             rowst++;
-            for(int row=rowst;row<=rowend && count<total;row++){
-                ans.push_back(matrix[row][colend]);
+            for(int i=rowst;i<=rowend && count<total;i++){
+                ans.push_back(matrix[i][colend]);
                 count++;
             }
             colend--;
-            for(int col=colend;col>=colst && count<total;col--){
-                ans.push_back(matrix[rowend][col]);
+            for(int i=colend;i>=colst && count<total;i--){
+                ans.push_back(matrix[rowend][i]);
                 count++;
             }
             rowend--;
-            for(int row=rowend;row>=rowst && count<total;row--){
-                ans.push_back(matrix[row][colst]);
+            for(int i=rowend;i>=rowst && count<total;i--){
+                ans.push_back(matrix[i][colst]);
                 count++;
             }
-            colst++;
+            colst++; 
         }
         return ans;
     }
