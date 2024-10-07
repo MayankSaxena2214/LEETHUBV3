@@ -4,16 +4,13 @@ public:
         int rows=matrix.size();
         int cols=matrix[0].size();
         int total=rows*cols;
-        int s=0,e=total-1;
-        int mid=(s+e)/2;
-        while(s<=e){
-            int val=matrix[mid/cols][mid%cols];
-            if(val==target)return true;
-            else if(val>target){
-                e=mid-1;
-            }
-            else s=mid+1;
-            mid=(s+e)/2;
+        int start=0,end=total-1;
+        while(start<=end){
+            int mid=(start+(end-start)/2);
+            int value=matrix[mid%cols][mid/cols];
+            if(value==target)return true;
+            else if(value>target)end--;
+            else start++;
         }
         return false;
     }
