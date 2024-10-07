@@ -1,38 +1,30 @@
 class Solution {
 public:
-    int firstOccur(auto&nums,int target){
+    int firstOccur(vector<int>& nums, int target) {
         int s=0,e=nums.size()-1;
         int ans=-1;
         while(s<=e){
-            int mid=(s+(e-s)/2);
+            int mid=(s+e)/2;
             if(nums[mid]==target){
                 ans=mid;
-                e=mid-1;
+                e--;
             }
-            else if(nums[mid]<target){
-                s=mid+1;
-            }
-            else{
-                e=mid-1;
-            }
+            else if(nums[mid]>target)e--;
+            else s++;
         }
         return ans;
     }
-    int lastOccur(auto&nums,int target){
+    int lastOccur(vector<int>& nums, int target) {
         int s=0,e=nums.size()-1;
         int ans=-1;
         while(s<=e){
-            int mid=(s+(e-s)/2);
+            int mid=(s+e)/2;
             if(nums[mid]==target){
                 ans=mid;
-                s=mid+1;
+                s++;
             }
-            else if(nums[mid]<target){
-                s=mid+1;
-            }
-            else{
-                e=mid-1;
-            }
+            else if(nums[mid]>target)e--;
+            else s++;
         }
         return ans;
     }
