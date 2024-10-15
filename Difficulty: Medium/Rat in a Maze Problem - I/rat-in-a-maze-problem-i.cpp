@@ -10,58 +10,59 @@ using namespace std;
 
 class Solution {
   public:
-    bool isSafe(vector<vector<int>> &mat,vector<vector<int>> &visited,int x,int y,int n){
-        if((x>=0 && x<n) && (y>=0 && y<n) && mat[x][y]==1 && visited[x][y]==0){
-            return true;
-        }
+    bool isSafe(vector<vector<int>> &mat,vector<vector<int>> visited,int x,int y,int n){
+        if((x>=0 && x<n) && (y>=0 && y<n) && (visited[x][y]==0) && (mat[x][y]==1))return true;
         return false;
     }
-    void solve(vector<vector<int>> &mat,vector<vector<int>> &visited,vector<string>&ans,string path,int x,int y,int n){
+    void solve(vector<vector<int>> &mat,int x,int y,int n,vector<string>&ans,vector<vector<int>>&visited,string& path){
         if(x==n-1 && y==n-1){
             ans.push_back(path);
-            return;
+            return ;
         }
         visited[x][y]=1;
+        int newx,newy;
         //DLRU
-        int newx=x+1,newy=y;
+        //Down
+        newx=x+1,newy=y;
         if(isSafe(mat,visited,newx,newy,n)){
             path.push_back('D');
-            solve(mat,visited,ans,path,newx,newy,n);
+            solve(mat,newx,newy,n,ans,visited,path);
             path.pop_back();
         }
+        //L
         newx=x,newy=y-1;
         if(isSafe(mat,visited,newx,newy,n)){
             path.push_back('L');
-            solve(mat,visited,ans,path,newx,newy,n);
+            solve(mat,newx,newy,n,ans,visited,path);
             path.pop_back();
         }
+        //R
         newx=x,newy=y+1;
         if(isSafe(mat,visited,newx,newy,n)){
             path.push_back('R');
-            solve(mat,visited,ans,path,newx,newy,n);
+            solve(mat,newx,newy,n,ans,visited,path);
             path.pop_back();
         }
+        //U
         newx=x-1,newy=y;
         if(isSafe(mat,visited,newx,newy,n)){
             path.push_back('U');
-            solve(mat,visited,ans,path,newx,newy,n);
+            solve(mat,newx,newy,n,ans,visited,path);
             path.pop_back();
         }
-        
-        
-        
         visited[x][y]=0;
     }
     vector<string> findPath(vector<vector<int>> &mat) {
         // Your code goes here
-        int n=mat.size();
         vector<string>ans;
-        string path;
+        if(mat[0][0]==0)return ans;
         int x=0,y=0;
-        if(mat[x][y]==0)return {};
-        vector<vector<int>>visited(mat.size(),vector<int>(mat[0].size(),0));
-        solve(mat,visited,ans,path,x,y,n);
+        int n=mat.size();
+        vector<vector<int>> visited(n,vector<int>(n,0));
+        string path;
+        solve(mat,x,y,n,ans,visited,path);
         return ans;
+        
     }
 };
 
