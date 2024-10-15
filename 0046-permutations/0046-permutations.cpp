@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void solve(auto&ans,auto&nums,int index){
+    void solve(vector<vector<int>>&ans,auto&nums,int index){
         if(index>=nums.size()){
             ans.push_back(nums);
             return;
