@@ -13,15 +13,19 @@ public:
     ListNode* deleteDuplicates(ListNode* head) {
         ListNode*dummy=new ListNode(0);
         ListNode*prev=dummy;
-        prev->next=head;
-        while(prev!=NULL && prev->next!=NULL && prev->next->next!=NULL){
+        dummy->next=head;
+        ListNode*curr=head;
+        while(prev->next && prev->next->next){
             if(prev->next->val==prev->next->next->val){
                 int value=prev->next->val;
-                while(prev->next!=NULL && prev->next->val==value){
-                    prev->next=prev->next->next;
+                ListNode*curr=prev->next;
+                while(curr!=NULL && curr->val==value){
+                    curr=curr->next;
                 }
+                prev->next=curr;
             }
             else{
+
                 prev=prev->next;
             }
         }
