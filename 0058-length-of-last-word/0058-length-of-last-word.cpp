@@ -1,13 +1,16 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        int ans=0;
+        int flag=0;
+        int len=0;
         for(int i=s.length()-1;i>=0;i--){
-            if(s[i]!=' ')ans++;
+            if(s[i]==' '){
+                if(len>0)return len;
+            }
             else{
-                if(ans>0)return ans;
+                len++;
             }
         }
-        return ans;
+        return len;
     }
 };
