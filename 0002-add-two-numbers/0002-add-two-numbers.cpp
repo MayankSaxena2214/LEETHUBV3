@@ -10,9 +10,9 @@
  */
 class Solution {
 public:
-    ListNode* reverse(ListNode* head) {
+    ListNode*reverse(ListNode*head){
         ListNode*curr=head,*prev=NULL,*forw=NULL;
-        while(curr!=NULL){
+        while(curr){
             forw=curr->next;
             curr->next=prev;
             prev=curr;
@@ -21,45 +21,47 @@ public:
         return prev;
     }
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        if(l1==NULL)return l2;
-        if(l2==NULL)return l1;
-        // l1=reverse(l1);
-        // l2=reverse(l2);
         int carry=0;
-        ListNode*ansHead=new ListNode(-1);
-        ListNode*ansTail=ansHead;
-        while(l1!=NULL && l2!=NULL){
-            int val=l1->val+l2->val+carry;
-            int digit=val%10;
-            carry=val/10;
-            ansTail->next=new ListNode(digit);
-            ansTail=ansTail->next;
+        
+        ListNode*anshead=new ListNode(0);
+        ListNode*anstail=anshead;
+        while(l1 && l2){
+            int total=carry+l1->val+l2->val;
+            carry=total/10;
+            int digit=total%10;
+            ListNode*temp=new ListNode(digit);
+            anstail->next=temp;
+            anstail=temp;
             l1=l1->next;
             l2=l2->next;
         }
-        while(l1!=NULL){
-            int val=l1->val+carry;
-            int digit=val%10;
-            carry=val/10;
-            ansTail->next=new ListNode(digit);
-            ansTail=ansTail->next;
+        while(l1){
+            int total=carry+l1->val;
+            carry=total/10;
+            int digit=total%10;
+            ListNode*temp=new ListNode(digit);
+            anstail->next=temp;
+            anstail=temp;
             l1=l1->next;
+            
         }
-        while(l2!=NULL){
-            int val=l2->val+carry;
-            int digit=val%10;
-            carry=val/10;
-            ansTail->next=new ListNode(digit);
-            ansTail=ansTail->next;
+        while(l2){
+            int total=carry+l2->val;
+            carry=total/10;
+            int digit=total%10;
+            ListNode*temp=new ListNode(digit);
+            anstail->next=temp;
+            anstail=temp;
             l2=l2->next;
         }
         while(carry!=0){
-            int val=carry;
-            int digit=val%10;
-            carry=val/10;
-            ansTail->next=new ListNode(digit);
-            ansTail=ansTail->next;
+            int total=carry;
+            carry=total/10;
+            int digit=total%10;
+            ListNode*temp=new ListNode(digit);
+            anstail->next=temp;
+            anstail=temp;
         }
-        return ansHead->next;
+        return anshead->next;
     }
 };
