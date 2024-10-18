@@ -2,8 +2,9 @@ class MyQueue {
 public:
     stack<int>st1;
     stack<int>st2;
+
     MyQueue() {
-        
+
     }
     
     void push(int x) {
@@ -16,6 +17,7 @@ public:
             st1.push(st2.top());
             st2.pop();
         }
+
     }
     
     int pop() {
@@ -31,7 +33,8 @@ public:
     }
     
     bool empty() {
-        return st1.empty();
+        if(st1.empty())return true;
+        return false;
     }
 };
 
