@@ -29,22 +29,35 @@ int main() {
 // } Driver Code Ends
 
 
-vector<long long> printFirstNegativeInteger(long long int A[], long long int N, long long int k) {
-    
-    queue<int>q;
-    vector<long long > ans;
-    for(int i=0;i<k;i++){
-        if(A[i]<0)q.push(i);
-    }
-    if(q.size()>0)ans.push_back(A[q.front()]);
-    else ans.push_back(0);
-    for(int i=k;i<N;i++){
-        if(!q.empty() && i-q.front()>=k){
-            q.pop();
+vector<long long> printFirstNegativeInteger(long long int A[], long long int N, long long int K) {
+                 
+    vector<long long>ans;
+    queue<long long>q;
+    for(int i=0;i<K;i++){
+        if(A[i]<0){
+            q.push(i);
         }
-        if(A[i]<0)q.push(i);
-        if(q.size()>0)ans.push_back(A[q.front()]);
-        else ans.push_back(0);
+        
+    }
+    if(q.size()>0){
+        ans.push_back(A[q.front()]);
+    }
+    else{
+        ans.push_back(0);
+    }
+    int i=K;
+    while(i<N){
+        while(!q.empty() && i-q.front()>=K)q.pop();
+        if(A[i]<0){
+            q.push(i);
+        }
+        if(q.size()>0){
+            ans.push_back(A[q.front()]);
+        }
+        else{
+            ans.push_back(0);
+        }
+        i++;
     }
     return ans;
-}
+ }
