@@ -17,6 +17,7 @@ class Solution
         q.pop();
         solve(q);
         q.push(val);
+        
     }
     queue<int> rev(queue<int> q)
     {
