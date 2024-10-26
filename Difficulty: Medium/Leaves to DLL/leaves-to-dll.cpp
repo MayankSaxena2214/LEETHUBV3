@@ -103,26 +103,26 @@ struct Node{
 class Solution {
   public:
     // Function to convert the binary tree to doubly linked list.
-    Node*solve(Node*root,Node*&anstail){
-        if(root==NULL)return NULL;
+    Node* solve(Node*root,Node*&ansTail){
+        if(root==NULL)return root;
         if(root->left==NULL && root->right==NULL){
-            anstail->right=root;
-            root->left=anstail;
-            anstail=root;
+            ansTail->right=root;
+            root->left=ansTail;
+            ansTail=root;
             return NULL;
         }
-        root->left=solve(root->left,anstail);
-        root->right=solve(root->right,anstail);
+        root->left=solve(root->left,ansTail);
+        root->right=solve(root->right,ansTail);
         return root;
     }
     Node* convertToDLL(Node* root) {
         // code here
-        Node*anshead=new Node(0);
-        Node*anstail=anshead;
-        solve(root,anstail);
-        anshead=anshead->right;
-        anshead->left=NULL;
-        return anshead;
+        Node*ansHead=new Node(0);
+        Node*ansTail=ansHead;
+        root=solve(root,ansTail);
+        ansHead=ansHead->right;
+        ansHead->left=NULL;
+        return ansHead;
     }
 };
 
@@ -152,6 +152,7 @@ int main() {
             curr = curr->left;
         }
         cout << "\n";
+        cout << "~" << endl;
     }
     return 0;
 }
