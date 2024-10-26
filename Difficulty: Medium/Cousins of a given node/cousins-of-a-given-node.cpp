@@ -123,34 +123,29 @@ class Solution
     vector<int> printCousins(Node* root, Node* node_to_find)
     {
         //code here
-        vector<int>ans;
         queue<Node*>q;
         q.push(root);
         bool marker=true;
         while(!q.empty() && marker){
             int n=q.size();
             for(int i=0;i<n;i++){
-                auto top=q.front();
+                auto front=q.front();
                 q.pop();
-                if((top->left && top->left->data==node_to_find->data) || (top->right && top->right->data==node_to_find->data)){
-                    marker=false;
-                }
+                if((front->left && front->left->data==node_to_find->data) || (front->right && front->right->data==node_to_find->data) )marker=false;
                 else{
-                    if(top->left){
-                        q.push(top->left);
-                    }
-                    if(top->right){
-                        q.push(top->right);
-                    }
+                    
+                    if(front->left)q.push(front->left);
+                    if(front->right)q.push(front->right);
                 }
             }
         }
+        vector<int>ans;
+        if(q.empty())return {-1};
         while(!q.empty()){
             auto top=q.front();
             q.pop();
             ans.push_back(top->data);
         }
-        if(ans.size()==0)ans.push_back(-1);
         return ans;
     }
     
@@ -185,7 +180,9 @@ int main()
 		cout << "\n";
 
 
-	}
+	
+cout << "~" << "\n";
+}
 
 	return 0;
 }
