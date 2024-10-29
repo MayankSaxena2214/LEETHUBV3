@@ -7,10 +7,10 @@ public:
         int start=0,end=total-1;
         while(start<=end){
             int mid=(start+(end-start)/2);
-            int value=matrix[mid%cols][mid/cols];
+            int value=matrix[mid/cols][mid%cols];
             if(value==target)return true;
-            else if(value>target)end--;
-            else start++;
+            else if(value>target)end=mid-1;
+            else start=mid+1;
         }
         return false;
     }
