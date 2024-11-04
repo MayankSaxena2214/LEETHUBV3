@@ -1,10 +1,10 @@
 class Solution {
 public:
     string longestPalindrome(string s) {
-        
-        int maxi=0;
-        string ans;
         int n=s.length();
+        int maxlength=0;
+        string ans;
+      
         vector<vector<int>>dp(n,vector<int>(n,0));
         for(int diff=0;diff<n;diff++){
             for(int i=0,j=diff;j<n;j++,i++){
@@ -15,9 +15,6 @@ public:
                     if(s[i]==s[j]){
                         dp[i][j]=2;
                     }
-                    else{
-                        dp[i][j]=0;
-                    }
                 }
                 else{
                     if(s[i]==s[j] && dp[i+1][j-1]!=0){
@@ -27,11 +24,9 @@ public:
                         dp[i][j]=0;
                     }
                 }
-                if(dp[i][j]){
-                    if(j-i+1>maxi){
-                        maxi=j-i+1;
-                        ans=s.substr(i,maxi);
-                    }
+                if(dp[i][j]>maxlength){
+                    maxlength=j-i+1;
+                    ans=s.substr(i,maxlength);
                 }
             }
         }
