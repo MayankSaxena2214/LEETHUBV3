@@ -1,18 +1,14 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        vector<int>v(26,0);
+        vector<int>count1(26,0);
+        vector<int>count2(26,0);
         for(auto ch:s){
-            v[ch-'a']++;
-
+            count1[ch-'a']++;
         }
         for(auto ch:t){
-            v[ch-'a']--;
+            count2[ch-'a']++;
         }
-        for(auto val:v){
-            if(val!=0)return false;
-        }
-        return true;
-
+        return count1==count2;
     }
 };
