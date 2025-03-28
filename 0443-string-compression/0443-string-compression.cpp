@@ -10,12 +10,12 @@ public:
             while(j<n && chars[j]==ch){
                 j++;
             }
-            int count=j-i;
             chars[ansIndex++]=ch;
+            int count=j-i;
             if(count>1){
                 string cnt=to_string(count);
-                for(auto ch:cnt){
-                    chars[ansIndex++]=ch;
+                for(auto chr:cnt){
+                    chars[ansIndex++]=chr;
                 }
             }
             i=j;
