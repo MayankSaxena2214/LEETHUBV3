@@ -1,26 +1,23 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        for(int i=0;i<s.length();i++){
-            if(s[i]>='a' && s[i]<='z')continue;
-            else if(s[i]>='0' && s[i]<='9')continue;
-            else if(s[i]>='A' && s[i]<='Z'){
-                int jump=s[i]-'A';
-                s[i]=jump+'a';
+        string str;
+        for(auto ch:s){
+            if(ch>='A' && ch<='Z'){
+                str.push_back(ch-'A'+'a');
             }
-            else{
-                s.erase(i,1);
-                i--;
+            else if(ch>='a' && ch<='z'){
+                str.push_back(ch);
+            }
+            else if(ch>='0' && ch<='9'){
+                str.push_back(ch);
             }
         }
-        for(auto ch:s)cout<<ch;
-        int low=0,high=s.length()-1;
-        while(low<high){
-            if(s[low]!=s[high]){
-                return false;
-            }
-            low++;
-            high--;
+        cout<<str<<" ";
+        //check palindrome
+        int st=0,e=str.length()-1;
+        while(st<e){
+            if(str[st++]!=str[e--])return false;
         }
         return true;
     }
