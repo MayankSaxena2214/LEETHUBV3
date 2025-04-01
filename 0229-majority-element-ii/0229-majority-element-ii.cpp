@@ -1,23 +1,21 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
-        int candidate1=INT_MIN;
-        int life1=0;
-        int candidate2=INT_MIN;
-        int life2=0;
+        int cand1=0,cand2=0,life1=0,life2=0;
+        int n=nums.size();
         for(auto val:nums){
-            if(candidate1==val){
+            if(cand1==val){
                 life1++;
             }
-            else if(candidate2==val){
+            else if(cand2==val){
                 life2++;
             }
             else if(life1==0){
-                candidate1=val;
-                life1=1;
+                cand1=val;
+                life1++;
             }
             else if(life2==0){
-                candidate2=val;
+                cand2=val;
                 life2++;
             }
             else{
@@ -25,15 +23,22 @@ public:
                 life2--;
             }
         }
-        int freq1=0,freq2=0;
-        for(auto val:nums){
-            if(val==candidate1)freq1++;
-            if(val==candidate2)freq2++;
+        int count1=0,count2=0;
+        //check exist or not
+        for(int i=0;i<n;i++){
+            if(nums[i]==cand1)count1++;
+            if(nums[i]==cand2)count2++;
         }
         vector<int>ans;
-        int n=nums.size();
-        if(freq1>n/3)ans.push_back(candidate1);
-        if(freq2>n/3)ans.push_back(candidate2);
+        if(count1>n/3){
+            ans.push_back(cand1);
+
+        }
+        if(count2>n/3){
+            if(ans.size()>0 && ans.back()!=cand2)
+            ans.push_back(cand2);
+
+        }
         return ans;
     }
 };
