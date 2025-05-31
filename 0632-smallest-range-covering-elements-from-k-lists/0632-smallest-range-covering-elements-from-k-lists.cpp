@@ -1,46 +1,58 @@
 class Solution {
 public:
     class Node{
-    public :
-    int data,i,j;
-    Node(int d,int row,int col){
-        data=d;
-        i=row;
-        j=col;
-    }
-};
-class compare{
-    public:
-    bool operator()(Node*a,Node*b){
-        return a->data>b->data;
-    }
-};
+        public:
+            int data;
+            int i;
+            int j;
+        public:
+            Node(int data,int i,int j){
+                this->data=data;
+                this->i=i;
+                this->j=j;
+            }
+    };
+    class compare{
+        public:
+            bool operator()(Node*a,Node*b){
+                return a->data>b->data;
+            }
+    };
     vector<int> smallestRange(vector<vector<int>>& nums) {
-         int mini=INT_MAX,maxi=INT_MIN;
-    priority_queue<Node*,vector<Node*>,compare>pq;
-    for(int i=0;i<nums.size();i++){
-        mini=min(mini,nums[i][0]);
-        maxi=max(maxi,nums[i][0]);
-        pq.push(new Node(nums[i][0],i,0));
-    }
-    int start=mini,end=maxi;
-    while(!pq.empty()){
-        auto temp=pq.top();
-        pq.pop();
-        mini=temp->data;
-        if(end-start>maxi-mini){
-            end=maxi;
-            start=mini;
+        int k=nums.size();
+        priority_queue<Node*,vector<Node*>,compare>pq;
+
+        int maxi=INT_MIN,mini=INT_MAX;
+
+        for(int i=0;i<k;i++){
+            int val=nums[i][0];
+            maxi=max(maxi,val);
+            mini=min(mini,val);
+            pq.push(new Node(val,i,0));
         }
-        if(temp->j+1<nums[temp->i].size()){
-            //we can push
-            maxi=max(maxi,nums[temp->i][temp->j+1]);
-            pq.push(new Node(nums[temp->i][temp->j+1],temp->i,temp->j+1));
+        int end=maxi;
+        int start=mini;
+        while(!pq.empty()){
+            auto top=pq.top();
+            pq.pop();
+            int data=top->data;
+            int row=top->i;
+            int col=top->j;
+            mini=data;
+            if(maxi-mini<end-start){
+                end=maxi;
+                start=mini;
+            }
+            if(col+1<nums[row].size()){
+                pq.push(new Node(nums[row][col+1],row,col+1));
+                maxi=max(maxi,nums[row][col+1]);
+
+            }
+            else{
+                break;
+            }
         }
-        else{
-            break;
-        }
-    }
-    return {start,end};
+        return {start,end};
+
     }
 };
