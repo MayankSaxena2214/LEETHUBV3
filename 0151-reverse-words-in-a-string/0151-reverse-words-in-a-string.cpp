@@ -1,21 +1,29 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        stringstream ss(s);
         string temp;
-        vector<string>hold;
-        while(ss>>temp){
-            hold.push_back(temp);
+        vector<string>arr;
+        for(auto ch:s){
+            if(ch==' '){
+                if(temp.length()>0){
+                    arr.push_back(temp);
+                    temp="";
+                }
+            }
+            else{
+                temp+=ch;
+            }
         }
         string ans;
-        for(int i=hold.size()-1;i>=0;i--){
-            ans+=hold[i];
-            ans+=' ';
+        //last string remaining
+        if(temp.length()>0){
+            arr.push_back(temp);
         }
-        if(hold.size()==0){
-            return ans;
+        for(int i=arr.size()-1;i>=0;i--){
+            ans+=arr[i];
+            if(i!=0)ans+=' ';
         }
-        ans.pop_back();
         return ans;
+
     }
 };
