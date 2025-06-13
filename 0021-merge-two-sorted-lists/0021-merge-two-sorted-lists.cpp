@@ -28,12 +28,12 @@ public:
             }
         }
         while(temp1){
-             ansTail->next=temp1;
+            ansTail->next=temp1;
                 ansTail=temp1;
                 temp1=temp1->next;
         }
         while(temp2){
-             ansTail->next=temp2;
+            ansTail->next=temp2;
                 ansTail=temp2;
                 temp2=temp2->next;
         }
