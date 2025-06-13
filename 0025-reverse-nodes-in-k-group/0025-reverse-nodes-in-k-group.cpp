@@ -16,8 +16,8 @@ public:
             if(temp==NULL)return head;
             temp=temp->next;
         }
+        ListNode*prev=NULL,*curr=head,*forw=NULL;
         int count=0;
-        ListNode*curr=head,*prev=NULL,*forw=NULL;
         while(curr!=NULL && count<k){
             forw=curr->next;
             curr->next=prev;
@@ -25,8 +25,8 @@ public:
             curr=forw;
             count++;
         }
-        if(forw!=NULL){
-            head->next=reverseKGroup(forw,k);
+        if(curr!=NULL){
+            head->next=reverseKGroup(curr,k);
         }
         return prev;
     }
