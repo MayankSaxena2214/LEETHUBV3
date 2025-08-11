@@ -22,9 +22,10 @@ class Solution {
     }
     bool isCyclic(int V, vector<vector<int>> &edges) {
         // code here
-        vector<bool>visited(V,false);
-        unordered_map<int,vector<int>>adj;
-        vector<bool>inRecursion(V,false);
+         unordered_map<int,vector<int>>adj;
+        vector<int>indegree(V,0);
+        vector<int>result;
+        queue<int>q;
         for(auto vec:edges){
             int u=vec[0];
             int v=vec[1];
@@ -32,10 +33,45 @@ class Solution {
             
         }
         for(int i=0;i<V;i++){
-            if(!visited[i] && isCyclicDFS(adj,i,visited,inRecursion)){
-                return true;
+            for(auto v:adj[i]){
+                indegree[v]++;
             }
         }
-        return false;
+        for(int i=0;i<V;i++){
+            if(indegree[i]==0){
+                q.push(i);
+                result.push_back(i);
+            }
+        }
+        while(!q.empty()){
+            auto u=q.front();
+            q.pop();
+            
+            for(auto v:adj[u]){
+                indegree[v]--;
+                if(indegree[v]==0){
+                    q.push(v);
+                    result.push_back(v);
+                }
+            }
+        }
+        if(result.size()==V)return false;
+        return true;
+        
+        // vector<bool>visited(V,false);
+        // unordered_map<int,vector<int>>adj;
+        // vector<bool>inRecursion(V,false);
+        // for(auto vec:edges){
+        //     int u=vec[0];
+        //     int v=vec[1];
+        //     adj[u].push_back(v);
+            
+        // }
+        // for(int i=0;i<V;i++){
+        //     if(!visited[i] && isCyclicDFS(adj,i,visited,inRecursion)){
+        //         return true;
+        //     }
+        // }
+        // return false;
     }
 };
