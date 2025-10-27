@@ -1,13 +1,11 @@
 class Solution {
 public:
     int bitwiseComplement(int n) {
-        if(n==0)return 1;
-        int ans=0;
         int mask=0;
-        int num=n;
-        while(num){
+        int x=n;
+        while(x!=0){
             mask=(mask<<1)|1;
-            num=num>>1;
+            x=x>>1;
         }
         return (~n)&mask;
     }
