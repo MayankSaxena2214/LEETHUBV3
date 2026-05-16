@@ -31,4 +31,21 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0053-maximum-subarray](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0053-maximum-subarray/) | Medium |
+| [1373-maximum-sum-bst-in-binary-tree](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1373-maximum-sum-bst-in-binary-tree/) | Hard |
+## Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1373-maximum-sum-bst-in-binary-tree](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1373-maximum-sum-bst-in-binary-tree/) | Hard |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1373-maximum-sum-bst-in-binary-tree](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1373-maximum-sum-bst-in-binary-tree/) | Hard |
+## Binary Search Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1373-maximum-sum-bst-in-binary-tree](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1373-maximum-sum-bst-in-binary-tree/) | Hard |
+## Binary Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1373-maximum-sum-bst-in-binary-tree](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1373-maximum-sum-bst-in-binary-tree/) | Hard |
 <!---LeetCode Topics End-->
