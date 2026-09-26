@@ -9,11 +9,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0001-two-sum](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0001-two-sum/) | Easy |
 | [0053-maximum-subarray](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0053-maximum-subarray/) | Medium |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
+| [1207-unique-number-of-occurrences](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1207-unique-number-of-occurrences/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0001-two-sum](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0001-two-sum/) | Easy |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
+| [1207-unique-number-of-occurrences](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1207-unique-number-of-occurrences/) | Easy |
 ## Divide and Conquer
 | Problem Name | Difficulty |
 | ------- | ------- |
