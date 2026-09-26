@@ -2,13 +2,9 @@ class Solution {
 public:
     bool uniqueOccurrences(vector<int>& arr) {
         unordered_map<int,int>mp;
-        for(auto val:arr){
-            mp[val]++;
-        }
         unordered_set<int>st;
-        for(auto val:mp){
-            st.insert(val.second);
-        }
+        for(auto val:arr)mp[val]++;
+        for(auto pr:mp)st.insert(pr.second);
         return mp.size()==st.size();
     }
 };
