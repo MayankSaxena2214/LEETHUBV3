@@ -53,6 +53,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0191-number-of-1-bits](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0191-number-of-1-bits/) | Easy |
+| [1009-complement-of-base-10-integer](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1009-complement-of-base-10-integer/) | Easy |
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
