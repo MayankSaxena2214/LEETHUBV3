@@ -1,13 +1,11 @@
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
-        int formed=1;
+        int temp=1;
         for(int i=0;i<31;i++){
-            if(n==formed){
-                return true;
-            }
-            if(formed<INT_MAX/2)
-            formed=formed*2;
+            if(temp==n)return true;
+            if(temp<INT_MIN/2 || temp>INT_MAX/2)return false;
+            temp=temp*2;
         }
         return false;
     }
