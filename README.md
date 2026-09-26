@@ -53,9 +53,15 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0191-number-of-1-bits](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0191-number-of-1-bits/) | Easy |
+| [0231-power-of-two](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0231-power-of-two/) | Easy |
 | [1009-complement-of-base-10-integer](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1009-complement-of-base-10-integer/) | Easy |
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0007-reverse-integer](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0007-reverse-integer/) | Medium |
+| [0231-power-of-two](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0231-power-of-two/) | Easy |
+## Recursion
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0231-power-of-two](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0231-power-of-two/) | Easy |
 <!---LeetCode Topics End-->
