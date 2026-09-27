@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0001-two-sum](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0001-two-sum/) | Easy |
 | [0053-maximum-subarray](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0053-maximum-subarray/) | Medium |
+| [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0442-find-all-duplicates-in-an-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0442-find-all-duplicates-in-an-array/) | Medium |
@@ -29,6 +30,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0442-find-all-duplicates-in-an-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0442-find-all-duplicates-in-an-array/) | Medium |
@@ -76,5 +78,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
+## Quicksort
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
+## Bubble Sort
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 <!---LeetCode Topics End-->
