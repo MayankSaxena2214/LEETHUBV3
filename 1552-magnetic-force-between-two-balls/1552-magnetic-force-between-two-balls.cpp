@@ -1,38 +1,37 @@
 class Solution {
 public:
-    bool isPossible(auto&nums,auto&m,auto&n,auto&mid){
-        int lastPos=nums[0];
-        int count=1;
-
-        for(int i=0;i<n;i++){
-            if(nums[i]-lastPos>=mid){
-                count++;
-                lastPos=nums[i];
-                if(count>=m)return true;
-            }
+bool isPossible(vector<int>&stalls,int n,int k,int mid){
+    int lastPos=stalls[0];
+    int cowCount=1;
+    for(int i=0;i<n;i++){
+        if(stalls[i]-lastPos>=mid){
+            cowCount++;
+            lastPos=stalls[i];
+            if(cowCount==k)return true;
         }
-        return false;
+
     }
-    int maxDistance(vector<int>& position, int m) {
-        int n=position.size();
-        sort(position.begin(),position.end());
-        int low=0;
-        int maxi=position[n-1];
-        int mini=position[0];
+    return false;
 
-        int high=maxi-mini;
-        int ans=-1;
-        while(low<=high){
-            int mid=low+(high-low)/2;
-
-            if(isPossible(position,m,n,mid)){
-                ans=mid;
-                low=mid+1;
-            }
-            else{
-                high=mid-1;
-            }
+}
+    int maxDistance(vector<int>& stalls, int k) {
+        //    Write your code here.
+    int n=stalls.size();
+    int s=0;
+    sort(stalls.begin(),stalls.end());
+    int  e=stalls[n-1];
+    int mid=s+(e-s)/2;
+    int ans=-1;
+    while(s<=e){
+        if(isPossible(stalls,n,k,mid)){
+            ans=mid;
+            s=mid+1;
         }
-        return ans;
+        else{
+            e=mid-1;
+        }
+        mid=s+(e-s)/2;
+    }
+    return ans;
     }
 };
