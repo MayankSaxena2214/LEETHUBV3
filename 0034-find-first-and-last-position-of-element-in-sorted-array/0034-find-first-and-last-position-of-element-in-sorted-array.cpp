@@ -1,52 +1,50 @@
 class Solution {
 public:
-    int firstOccur(auto&nums,auto&target,int&n){
+ int findLastOccur(auto&nums,int&target,int n){
+        //
+        int s=0,e=n-1;
+        int mid=s+(e-s)/2;
         int ans=-1;
-        int low=0,high=n-1;
-        int mid=(low+(high-low)/2);
-
-        while(low<=high){
+        while(s<=e){
             if(nums[mid]==target){
                 ans=mid;
-                high=mid-1;
+               s=mid+1;
             }
             else if(nums[mid]>target){
-                high=mid-1;
+                e=mid-1;
             }
             else{
-                low=mid+1;
+                s=mid+1;
             }
-            mid=(low+(high-low)/2);
-            
+            mid=s+(e-s)/2;
         }
         return ans;
+
     }
-    int lastOccur(auto&nums,auto&target,int&n){
+    int findFirstOccur(auto&nums,int&target,int n){
+        //
+        int s=0,e=n-1;
+        int mid=s+(e-s)/2;
         int ans=-1;
-        int low=0,high=n-1;
-        int mid=(low+(high-low)/2);
-
-        while(low<=high){
+        while(s<=e){
             if(nums[mid]==target){
                 ans=mid;
-                low=mid+1;
+                e=mid-1;
             }
             else if(nums[mid]>target){
-                high=mid-1;
+                e=mid-1;
             }
             else{
-                low=mid+1;
+                s=mid+1;
             }
-            mid=(low+(high-low)/2);
-            
+            mid=s+(e-s)/2;
         }
         return ans;
+
     }
     vector<int> searchRange(vector<int>& nums, int target) {
-        int n=nums.size();
-        int first=firstOccur(nums,target,n);
-        int last=lastOccur(nums,target,n);
-
+        int first=findFirstOccur(nums,target,nums.size());
+        int last=findLastOccur(nums,target,nums.size());
         return {first,last};
     }
 };
