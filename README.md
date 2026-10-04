@@ -97,6 +97,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0189-rotate-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0189-rotate-array/) | Medium |
 | [0283-move-zeroes](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0283-move-zeroes/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
+| [0443-string-compression](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0443-string-compression/) | Medium |
 | [0567-permutation-in-string](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0567-permutation-in-string/) | Medium |
 ## Quicksort
 | Problem Name | Difficulty |
@@ -113,6 +114,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0443-string-compression](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0443-string-compression/) | Medium |
 | [0567-permutation-in-string](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0567-permutation-in-string/) | Medium |
 | [1910-remove-all-occurrences-of-a-substring](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1910-remove-all-occurrences-of-a-substring/) | Medium |
 ## Stack
