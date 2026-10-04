@@ -12,6 +12,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 | [0088-merge-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0088-merge-sorted-array/) | Easy |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
+| [0189-rotate-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0189-rotate-array/) | Medium |
 | [0283-move-zeroes](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0283-move-zeroes/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0442-find-all-duplicates-in-an-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0442-find-all-duplicates-in-an-array/) | Medium |
@@ -80,6 +81,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0007-reverse-integer](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0007-reverse-integer/) | Medium |
+| [0189-rotate-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0189-rotate-array/) | Medium |
 | [0231-power-of-two](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0231-power-of-two/) | Easy |
 ## Recursion
 | Problem Name | Difficulty |
@@ -90,6 +92,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 | [0088-merge-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0088-merge-sorted-array/) | Easy |
+| [0189-rotate-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0189-rotate-array/) | Medium |
 | [0283-move-zeroes](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0283-move-zeroes/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 ## Quicksort
