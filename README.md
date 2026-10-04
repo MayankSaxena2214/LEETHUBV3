@@ -13,6 +13,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0442-find-all-duplicates-in-an-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0442-find-all-duplicates-in-an-array/) | Medium |
+| [0852-peak-index-in-a-mountain-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0852-peak-index-in-a-mountain-array/) | Medium |
 | [1207-unique-number-of-occurrences](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1207-unique-number-of-occurrences/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
@@ -57,6 +58,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
+| [0852-peak-index-in-a-mountain-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0852-peak-index-in-a-mountain-array/) | Medium |
 | [1373-maximum-sum-bst-in-binary-tree](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1373-maximum-sum-bst-in-binary-tree/) | Hard |
 ## Binary Tree
 | Problem Name | Difficulty |
@@ -90,4 +92,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
+## Ternary Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0852-peak-index-in-a-mountain-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0852-peak-index-in-a-mountain-array/) | Medium |
 <!---LeetCode Topics End-->
