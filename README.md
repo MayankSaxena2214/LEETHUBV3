@@ -19,6 +19,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0852-peak-index-in-a-mountain-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0852-peak-index-in-a-mountain-array/) | Medium |
 | [1207-unique-number-of-occurrences](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1207-unique-number-of-occurrences/) | Easy |
 | [1552-magnetic-force-between-two-balls](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1552-magnetic-force-between-two-balls/) | Medium |
+| [1752-check-if-array-is-sorted-and-rotated](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1752-check-if-array-is-sorted-and-rotated/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
