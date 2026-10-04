@@ -10,6 +10,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium |
 | [0053-maximum-subarray](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0053-maximum-subarray/) | Medium |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
+| [0088-merge-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0088-merge-sorted-array/) | Easy |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0442-find-all-duplicates-in-an-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0442-find-all-duplicates-in-an-array/) | Medium |
@@ -34,6 +35,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
+| [0088-merge-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0088-merge-sorted-array/) | Easy |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0442-find-all-duplicates-in-an-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0442-find-all-duplicates-in-an-array/) | Medium |
@@ -86,6 +88,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
+| [0088-merge-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0088-merge-sorted-array/) | Easy |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 ## Quicksort
 | Problem Name | Difficulty |
