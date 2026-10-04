@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0001-two-sum](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0001-two-sum/) | Easy |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium |
+| [0048-rotate-image](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0048-rotate-image/) | Medium |
 | [0053-maximum-subarray](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0053-maximum-subarray/) | Medium |
 | [0054-spiral-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0054-spiral-matrix/) | Medium |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
@@ -84,6 +85,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0007-reverse-integer](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0007-reverse-integer/) | Medium |
+| [0048-rotate-image](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0048-rotate-image/) | Medium |
 | [0189-rotate-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0189-rotate-array/) | Medium |
 | [0231-power-of-two](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0231-power-of-two/) | Easy |
 ## Recursion
@@ -134,5 +136,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0048-rotate-image](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0048-rotate-image/) | Medium |
 | [0054-spiral-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0054-spiral-matrix/) | Medium |
 <!---LeetCode Topics End-->
