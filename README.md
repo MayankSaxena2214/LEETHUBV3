@@ -108,4 +108,16 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0852-peak-index-in-a-mountain-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0852-peak-index-in-a-mountain-array/) | Medium |
+## String
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1910-remove-all-occurrences-of-a-substring](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1910-remove-all-occurrences-of-a-substring/) | Medium |
+## Stack
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1910-remove-all-occurrences-of-a-substring](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1910-remove-all-occurrences-of-a-substring/) | Medium |
+## Simulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1910-remove-all-occurrences-of-a-substring](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1910-remove-all-occurrences-of-a-substring/) | Medium |
 <!---LeetCode Topics End-->
