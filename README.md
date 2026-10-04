@@ -11,6 +11,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0048-rotate-image](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0048-rotate-image/) | Medium |
 | [0053-maximum-subarray](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0053-maximum-subarray/) | Medium |
 | [0054-spiral-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0054-spiral-matrix/) | Medium |
+| [0074-search-a-2d-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0074-search-a-2d-matrix/) | Medium |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 | [0088-merge-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0088-merge-sorted-array/) | Easy |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
@@ -67,6 +68,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium |
+| [0074-search-a-2d-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0074-search-a-2d-matrix/) | Medium |
 | [0349-intersection-of-two-arrays](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0349-intersection-of-two-arrays/) | Easy |
 | [0852-peak-index-in-a-mountain-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0852-peak-index-in-a-mountain-array/) | Medium |
 | [1373-maximum-sum-bst-in-binary-tree](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1373-maximum-sum-bst-in-binary-tree/) | Hard |
@@ -138,4 +140,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0048-rotate-image](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0048-rotate-image/) | Medium |
 | [0054-spiral-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0054-spiral-matrix/) | Medium |
+| [0074-search-a-2d-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0074-search-a-2d-matrix/) | Medium |
 <!---LeetCode Topics End-->
