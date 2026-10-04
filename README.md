@@ -9,6 +9,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0001-two-sum](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0001-two-sum/) | Easy |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium |
 | [0053-maximum-subarray](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0053-maximum-subarray/) | Medium |
+| [0054-spiral-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0054-spiral-matrix/) | Medium |
 | [0075-sort-colors](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0075-sort-colors/) | Medium |
 | [0088-merge-sorted-array](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0088-merge-sorted-array/) | Easy |
 | [0169-majority-element](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0169-majority-element/) | Easy |
@@ -124,9 +125,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0054-spiral-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0054-spiral-matrix/) | Medium |
 | [1910-remove-all-occurrences-of-a-substring](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/1910-remove-all-occurrences-of-a-substring/) | Medium |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0567-permutation-in-string](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0567-permutation-in-string/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0054-spiral-matrix](https://github.com/MayankSaxena2214/LEETHUBV3/tree/main/0054-spiral-matrix/) | Medium |
 <!---LeetCode Topics End-->
